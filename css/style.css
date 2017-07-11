@@ -2,30 +2,6 @@
     box-sizing: border-box;
 }
 
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
-
-[class*="col-"] {
-    float: left;
-    padding: 15px;
-}
-
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
 body {
     font-family: "Numans", "Roboto", sans-serif;
     color: #999; 
@@ -203,4 +179,96 @@ h2 {
     cursor: pointer; /* Add a pointer cursor on mouse-over */
     text-transform: uppercase;
     font-size: 12pt
+}
+
+
+
+
+@media all and (min-width: 980px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+    [class*="col-"] {
+        float: left;
+        padding: 15px;
+    }
+
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+
+
+
+
+
+
+
+@media all and (max-width: 979px) {
+    #site-container {
+        width: 100%;
+    }
+    
+    #header-left {
+        height: auto;
+        margin: 0 auto;
+        padding-bottom: 25px;
+        text-align: center;
+    }
+    
+    #header-left p {
+        margin: 25px 0;
+    }
+    
+    #header-right {
+        height: auto;
+        padding: 20px;
+        padding-top: 0;
+    }
+    
+
+    
+    #header-right a {
+        padding-top: 20px;
+    }
+    
+    #main-content {
+        padding: 0;
+        text-align: center;
+    }
+    
+    #main-content ul {
+        text-align: left;
+    }
+    
+    #introduction {
+        padding: 0 10px;
+    }
+    
+    #main-content .row {
+        background: #fff;
+        padding: 10px;
+    }
+    
+    #index-project p {
+        margin: 0;
+        padding: 10px 0;
+    }
+    
+    
+    
+    
+    
 }
