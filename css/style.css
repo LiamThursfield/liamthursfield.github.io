@@ -184,7 +184,7 @@ h2 {
 
 
 
-@media all and (min-width: 980px) {
+@media screen and (min-width: 980px) {
     .col-1 {width: 8.33%;}
     .col-2 {width: 16.66%;}
     .col-3 {width: 25%;}
@@ -216,7 +216,7 @@ h2 {
 
 
 
-@media all and (max-width: 979px) {
+@media screen and (max-width: 979px) {
     #site-container {
         width: 100%;
     }
@@ -266,9 +266,5 @@ h2 {
         margin: 0;
         padding: 10px 0;
     }
-    
-    
-    
-    
-    
+
 }
