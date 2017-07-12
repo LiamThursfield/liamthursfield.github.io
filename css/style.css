@@ -253,6 +253,10 @@ h2 {
         text-align: left;
     }
     
+    .module-code {
+        display: none;
+    }
+    
     #introduction {
         padding: 0 10px;
     }
