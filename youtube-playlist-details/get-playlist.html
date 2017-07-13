@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Youtube Playlist Details</title>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed">
+    <script src="https://use.fontawesome.com/b8d5b56b66.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="site-container" class="flex-center-xy">
+        <header>
+            <h1><span class="youtube">YouTube</span> Playlist Details</h1>
+            <h2>Playlist Id: <span id="playlist-id" class="youtube"></span></h2>
+        </header>
+<!--        
+        <script>
+            var playlist_id = ""; // create variable for playlist id
+            args = location.search.substr(1).split(/&/); // create an array, containing all the GET args
+            for (var i=0; i<args.length; ++i) { // loop through the args
+                var tmp = args[i].split(/=/); // split the arg into key=>value pair array
+                // if the current arg is the 'playlist-url' arg:
+                if (tmp[0] == "playlist-url") {
+                    var playlist_url = decodeURIComponent(tmp[1]); // decode the youtube playlist url (e.g '%3A' into ':')
+                    playlist_url = playlist_url.split("list="); // split the url into the main url and the playlist id
+                    playlist_id = playlist_url[1];
+                }
+            }
+            
+            // if there is no playlist url:
+            if (playlist_url == "") {
+                alert("No URL was entered. Returning to the home page.");
+                window.location.href = 'index.html';
+            }
+            
+            // otherwise, a url was entered:
+            var span_playlist_url = document.getElementById("playlist-url"); // get the span that will display the url
+            span_playlist_url.innerHTML = playlist_id;
+            
+        </script>
+-->
+        
+    </div>
+    
+    <!-- Load all the scripts   -->
+    <script type="text/javascript" src="js/main.js"></script> 
+    <script type="text/javascript" src="js/get-playlist.js"></script>
+</body>
+</html>
