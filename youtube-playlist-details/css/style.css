@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #E4E5F1;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 62px;
+    color: #263545;
+}
+
+.search-box {
+    font-family: "Open Sans";
+    font-size: 22px;
+    padding: 8px 9px 8px 5px;
+    background: #263545;
+    color: #fff;
+    width: 75%;
+    min-width: 300px;
+    border: 0px solid #dbdbdb;
+    margin-bottom: 10px;
+}
+
+.search-box::-webkit-input-placeholder { /* For WebKit browsers */
+    color:    #999;
+}
+
+.search-box:-moz-placeholder { /* For Mozilla Firefox 4 to 18 */
+    color:    #999;
+}
+
+.search-box::-moz-placeholder { /* For Mozilla Firefox 19+ */
+    color:    #999;
+}
+
+.search-box:-ms-input-placeholder { /* For Internet Explorer 10+ */
+    color:    #999;
+}
+
+.search-box:focus {
+    outline: 0px solid #fff !important;
+    color: #fff;
+}
+
+.search-box:focus::-webkit-input-placeholder { /* For WebKit browsers */
+    color:    #fff;
+}
+
+.search-box:focus:-moz-placeholder { /* For Mozilla Firefox 4 to 18 */
+    color:    #fff;
+}
+
+.search-box:focus::-moz-placeholder { /* For Mozilla Firefox 19+ */
+    color:    #fff;
+}
+
+.search-box:focus:-ms-input-placeholder { /* For Internet Explorer 10+ */
+    color:    #fff;
+}
+
+.search-button {
+    display: block;
+    width: 200px;
+    font-size: 22px;
+    margin: auto;
+    padding: 13px 25px;
+    border: 2px solid #C4283D;
+    background-color: #C4283D;
+    color: #fff;
+    text-transform: uppercase
+}
+
+
+
+#index-container p {
+    color: #C4283D;
+}
+
+.youtube {
+    color: #C4283D;
+}
