@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Youtube Playlist Details</title>
     <link rel="icon" type="image/png" href="../images/favicon.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed">
     <script src="https://use.fontawesome.com/b8d5b56b66.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -17,12 +17,15 @@
                 <span class="youtube">YouTube</span><br> Playlist Details
             </h1>
 
-            <form class="search-form" action="../under-construction.html" method="get">
+            <form class="search-form" action="get-playlist.html" method="get">
                 <input type="text" class="search-box" name="playlist-url" placeholder="Playlist URL" required />
-                <input type="submit" class="search-button" name="submit" value="Go">
+                <button type="submit" class="search-button">Submit</button>
             </form>
 
-            <p>Enter the URL of a Youtube playlist to view it's details.</p>
+            <p>
+                Enter the URL of a Youtube playlist to view it's details. <br>
+                <span class="de-emphasize">E.g. https://www.youtube.com/playlist?list=PLE7E8B7F4856C9B19</span>
+            </p>
 
         </div>
     </div>
