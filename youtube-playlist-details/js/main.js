@@ -19,3 +19,25 @@ function getPlaylistId() {
     }
     return null; // there is no playlist id to return 
 }
+
+
+/**
+* Retrieve the requested playlist via the YouTupe Playlists api
+* @playlistId - the id of the playlist to retrieve
+*/
+function retrievePlaylist(key, id, callback) {
+    $.get(
+        "https://www.googleapis.com/youtube/v3/playlists?key=" + key + 
+        "&part=snippet" +
+        "&id=" + id, 
+        callback
+    ); // end of $.get()
+} // end of retrievePlaylist()
+
+/**
+* Uses the data object returned from retrievePlaylist()
+* Extracts the playlist details
+*/
+function getPlaylistFromData(data)  {
+    return data.items[0].snippet;
+}
