@@ -58,6 +58,11 @@ body {
     padding: 20px;
 }
 
+.modules td:nth-child(2){
+    padding-left: 15px;
+    text-align: right;
+}
+
 .nav-horizontal {
     margin: auto;
     text-align: center;
