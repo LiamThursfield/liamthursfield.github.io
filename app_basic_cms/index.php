@@ -1,6 +1,6 @@
 <?php
 
-require('config.php');
+require('../../app_basic_cms_config.php');
 $action = isset($_GET['action']) ? $_GET['action'] : '';
 
 switch ($action) {

@@ -7,5 +7,5 @@
   </head>
   <body>
     <div id="container">
-      <a href="."><img id="logo" src="images/logo.jpg" alt="LT <CMS></CMS>"/></a>
+      <a href="."><img id="logo" src="images/logo.png" alt="LT CMS"/></a>
 
