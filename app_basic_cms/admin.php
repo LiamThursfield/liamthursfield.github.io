@@ -33,7 +33,7 @@ switch($action) {
 
 function login() {
   $results = array();
-  $results['pageTitle'] = "Admin Login | Widget News";
+  $results['pageTitle'] = "Admin Login";
 
   if (isset($_POST['login'])) {
     // User has posted the login form: attempt to log the user in

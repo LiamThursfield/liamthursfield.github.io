@@ -3,247 +3,214 @@
 body {
   margin: 0;
   color: #333;
-  background-color: #00a0b0;
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  line-height: 1.5em;
+  background-color: #ddd;
+  font-family: "Numans", Arial, Helvetica, sans-serif;
+  font-weight: 100;
 }
 
 #container {
   width: 960px;
   background: #fff;
-  margin: 20px auto;
-  padding: 20px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  margin: 0 auto;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
 }
 
+/* The header */
 
-/* The logo and footer */
-
-#logo {
-  display: block;
-  width: 300px;
-  padding: 0 660px 20px 0;
-  border: none;
-  border-bottom: 1px solid #00a0b0;
-  margin-bottom: 40px;
+header {
+    background: #fd5a5d;
+    margin: 0;
+    height: 100px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #242424;
 }
 
-#footer {
-  border-top: 1px solid #00a0b0;
-  margin-top: 40px;
-  padding: 20px 0 0 0;
-  font-size: .8em;
+header h1 {
+    color: #242424;
+    display: inline-block;
+    font-family: "Bree Serif", ariel;
+    font-weight: 100;
+    font-size: 55px;
+    padding-left:  20px;
+    margin: 0;
 }
 
+/* Article List */
 
-/* Headings */
-
-h1 {
-  color: #eb6841;
-  margin-bottom: 30px;
-  line-height: 1.2em;
+.article_list {
+    padding:10px 15px;
 }
 
-h2, h2 a {
-  color: #edc951;
+ul, .article_list h2 {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-h2 a {
-  text-decoration: none;
+.article_list .pubDate {
+    display: inline-block;
+    min-width: 80px;
+    font-size: 14px;
+    color: #fd5a5d;
 }
 
-
-/* Article headlines */
-
-#headlines {
-  list-style: none;
-  padding-left: 0;
-  width: 75%;
-}
-
-#headlines li {
-  margin-bottom: 2em;
-}
-
-.pubDate {
-  font-size: .8em;
-  color: #eb6841;
-  text-transform: uppercase;
-}
-
-#headlines .pubDate {
-  display: inline-block;
-  width: 100px;
-  font-size: .5em;
-  vertical-align: middle;
-}
-
-#headlines.archive .pubDate {
-  width: 130px;
+.article_list a {
+    padding: 0;
+    margin: 0;
+    color: #242424;
+    font-family: "Bree Serif", serif;
+    font-weight: 100;
 }
 
 .summary {
-  padding-left: 100px;
+  padding-left: 90px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(24, 24, 24, 0.1);
 }
 
-#headlines.archive .summary {
-  padding-left: 130px;
+p.bottom {
+    margin: 0;
+    margin-top: 90px;
+    padding: 10px 15px;
+    background-color: #555;
+}
+
+.bottom a {
+    color: #ccc;
+}
+
+/* Archive List */
+
+.total {
+    margin: 5px 0;
+    font-size: 26px;
+    font-family: "Bree Serif";
+    text-transform: capitalize;
+    color: #888;
+}
+
+.archive_list .pubDate{
+    min-width: 100px;
+}
+
+.archive_list .summary {
+    padding-left: 110px;
+}
+
+/* Footer */
+
+footer {
+    background-color: #242424;
+    padding: 20px;
+    text-align: center;
+    color: #eee;
+    font-size: 15px;
+}
+
+footer a.admin {
+    font-size: 18px
+    font-weight: 900;
+    color: #fd5a5d;
+}
+
+footer a {
+    color: #fd5a5d;
+}
+
+/* LOGIN FORM */
+form.login {
+    background-color: #404040;
+    border-radius: 5px;
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+form.login input {
+    font-family: "Numans", "Roboto", sans-serif;
+    font-size: 18px;
+}
+
+form.login input[type=text], form.login input[type=password] {
+    padding: 5px;
+    padding-left: 0;
+    padding-bottom: 6px;
+    margin: 20px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #999;
+    color: #eee;
+}
+
+form.login input[type=submit] {
+    padding: 10px 40px;
+    background: #fd5a5d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #eee;
+}
+
+form.login input[type=submit]:hover {
+    background: #fd686a;
+}
+
+form.login input[type=submit]:active {
+    background: #fd4e51;
+}
+
+.login ::-webkit-input-placeholder { /* Chrome */
+    color: #999;
+}
+.login :-ms-input-placeholder { /* IE 10+ */
+    color: #999;
+}
+.login ::-moz-placeholder { /* Firefox 19+ */
+    color: #999;
+    opacity: 1;
+}
+.login :-moz-placeholder { /* Firefox 4 - 18 */
+    color: #999;
+    opacity: 1;
 }
 
 
-/* "You are logged in..." header on admin pages */
+
+
+/*Admin Page */
 
 #adminHeader {
-  width: 940px;
-  padding: 0 10px;
-  border-bottom: 1px solid #00a0b0;
-  margin: -30px 0 40px 0;
-  font-size: 0.8em;
+    background-color: #444;
+    font-family: "Numans", sans-serif;
+    display: block;
+    padding: 0 10px;
+    border-bottom: 1px solid #fd5a5d;
+    color: #ddd;
 }
 
-
-/* Style the form with a coloured background, along with curved corners and a drop shadow */
-
-form {
-  margin: 20px auto;
-  padding: 40px 20px;
-  overflow: auto;
-  background: #fff4cf;
-  border: 1px solid #666;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
-  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
-  box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+#adminHeader h2 {
+    margin: 0;
+    padding-top: 10px;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: underline;
 }
 
-
-/* Give form elements consistent margin, padding and line height */
-
-form ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+#adminHeader .username {
+    color: #fd5a5d;
 }
 
-form ul li {
-  margin: .9em 0 0 0;
-  padding: 0;
+#adminHeader a {
+    color: #fff;
 }
 
-form * {
-  line-height: 1em;
-}
-
-
-/* The field labels */
-
-label {
-  display: block;
-  float: left;
-  clear: left;
-  text-align: right;
-  width: 15%;
-  padding: .4em 0 0 0;
-  margin: .15em .5em 0 0;
-}
-
-
-/* The fields */
-
-input, select, textarea {
-  display: block;
-  margin: 0;
-  padding: .4em;
-  width: 80%;
-}
-
-input, textarea, .date {
-  border: 2px solid #666;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  background: #fff;
-}
-
-input {
-  font-size: .9em;
-}
-
-select {
-  padding: 0;
-  margin-bottom: 2.5em;
-  position: relative;
-  top: .7em;
-}
-
-textarea {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  font-size: .9em;
-  height: 5em;
-  line-height: 1.5em;
-}
-
-textarea#content {
-  font-family: "Courier New", courier, fixed;
-}
-
-
-/* Place a border around focused fields */
-
-form *:focus {
-  border: 2px solid #7c412b;
-  outline: none;
-}
-
-
-/* Display correctly filled-in fields with a green background */
-
-input:valid, textarea:valid {
-  background: #efe;
-}
-
-
-/* Submit buttons */
-
-.buttons {
-  text-align: center;
-  margin: 40px 0 0 0;
-}
-
-input[type="submit"] {
-  display: inline;
-  margin: 0 20px;
-  width: 12em;
-  padding: 10px;
-  border: 2px solid #7c412b;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
-  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
-  box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
-  color: #fff;
-  background: #ef7d50;
-  font-weight: bold;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-input[type="submit"]:hover, input[type="submit"]:active {
-  cursor: pointer;
-  background: #fff;
-  color: #ef7d50;
-}
-
-input[type="submit"]:active {
-  background: #eee;
-  -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8) inset;
-  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8) inset;
-  box-shadow: 0 0 .5em rgba(0, 0, 0, .8) inset;
+.admin .detail {
+    color:#fd5a5d
 }
 
 
@@ -261,19 +228,19 @@ tr, th, td {
 }
 
 table, th {
-  border: 1px solid #00a0b0;
+  border: 1px solid #242424;
 }
 
 th {
   border-left: none;
   border-right: none;
-  background: #ef7d50;
+  background: #fd5a5d;
   color: #fff;
   cursor: default;
 }
 
 tr:nth-child(odd) {
-  background: #fff4cf;
+  background: #f2f2f2;
 }
 
 tr:nth-child(even) {
@@ -284,6 +251,8 @@ tr:hover {
   background: #ddd;
   cursor: pointer;
 }
+
+/* Add New Article Form */
 
 
 /* Status and error boxes */

@@ -1,7 +1,7 @@
 <?php include "templates/include/header.php" ?>
 
 <div id="adminHeader">
-  <h2>Widget News Admin</h2>
+  <h2>LT CMS Admin</h2>
   <p>
     You are now logged in as <b><?php echo htmlspecialchars($_SESSION['username'])?></b>.
     <a href="admin.php?action=logout">Logout</a>
@@ -50,7 +50,7 @@
 </form>
 
 <?php if ($results['article']->id) { ?>
-  <p>
+  <p class="bottom">
     <a href="admin.php?action=deleteArticle&amp;articleId=<?php echo $results['article']->id ?>"
       onclick="return confirm('Delete This Artcle?')">
         Delete This Article?

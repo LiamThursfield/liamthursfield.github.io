@@ -1,6 +1,6 @@
 <?php include "templates/include/header.php" ?>
 
-  <form action="admin.php?action=login" method="post" style="width:50%;">
+  <form action="admin.php?action=login" method="post" class="login">
     <input type="hidden" name="login" value="true" />
 
     <?php if (isset($result['errorMessage'])) { ?>
@@ -9,12 +9,12 @@
 
     <ul>
       <li>
-        <label for="username">Username</label>
+<!--        <label for="username">Username</label>-->
         <input type="text" name="username" id="username" placeholder="Your admin username" required autofocus maxlength="20" />
       </li>
 
       <li>
-        <label for="password">Password</label>
+<!--        <label for="password">Password</label>-->
         <input type="password" name="password" id="password" placeholder="Your admin password" required maxlength="20" />
       </li>
     </ul>

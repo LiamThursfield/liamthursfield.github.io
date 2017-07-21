@@ -1,13 +1,14 @@
 <?php include "templates/include/header.php" ?>
 
   <div id="adminHeader">
-    <h2>Widget News Admin</h2>
-    <p>You are logged in as <b><?php echo htmlspecialchars($_SESSION['username']) ?></b>,
+    <h2>LT CMS Admin</h2>
+    <p>You are logged in as <span class="username"><?php echo htmlspecialchars($_SESSION['username']) ?></span>,
       <a href="admin.php?action=logout"?>Log out</a></p>
     </p>
   </div>
 
-  <h1>All Articles</h1>
+  <div class="admin article_list">
+      <h1>All Articles <span class="detail">[<?php echo $results['totalRows']?>]</span></h1>
 
   <?php if ( isset( $results['errorMessage'] ) ) { ?>
           <div class="errorMessage"><?php echo $results['errorMessage'] ?></div>
@@ -36,8 +37,7 @@
   <?php } ?>
 
         </table>
+  </div>
 
-        <p><?php echo $results['totalRows']?> article<?php echo ( $results['totalRows'] != 1 ) ? 's' : '' ?> in total.</p>
-
-        <p><a href="admin.php?action=newArticle">Add a New Article</a></p>
+        <p class="bottom"><a href="admin.php?action=newArticle">Add a New Article</a></p>
 <?php include "templates/include/footer.php" ?>

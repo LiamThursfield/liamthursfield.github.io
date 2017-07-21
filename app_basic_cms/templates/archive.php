@@ -1,8 +1,12 @@
 <?php include "templates/include/header.php" ?>
 
-      <h1>Article Archive</h1>
-
-      <ul id="headlines" class="archive">
+      <div class="article_list archive_list">
+         
+         <p class="total">
+            <?php echo $results['totalRows']?> article<?php echo ($results['totalRows'] != 1) ? 's' : ''?> in total.
+          </p>
+         
+          <ul id="headlines">
         <?php foreach ($results['articles'] as $article) { ?>
           <li>
             <h2>
@@ -19,13 +23,12 @@
           </li>
         <?php }?>
       </ul>
+      </div>
 
-      <p>
-        <?php echo $results['totalRows']?> article<?php echo ($results['totalRows'] != 1) ? 's' : ''?> in total.
-      </p>
-
-      <p>
+      <p class="bottom">
         <a href="./">Return to Homepage</a>
       </p>
+
+      
 
       <?php include "templates/include/footer.php" ?>
