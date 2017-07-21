@@ -8,9 +8,7 @@
   </p>
 </div>
 
-<h1><?php echo $results['pageTitle']?></h1>
-
-<form action="admin.php?action=<?php echo $results['formAction']?>" method="post">
+<form action="admin.php?action=<?php echo $results['formAction']?>" method="post" class="edit_article">
   <input type="hidden" name="articleId" value="<?php echo $results['article']->id?>" />
 
   <?php if (isset($results['errorMessage'])) { ?>

@@ -151,29 +151,26 @@ public function insert() {
 } // end of function: insert()
 
 
-/**
-* Updates the current Article object on the database.
-*/
-public function update() {
-  // Does the Article object have an ID?
-  if (is_null($this->id)) {
-    trigger_error('Article::update(): Attempt to update an Article object that does not have its ID property set.', E_USER_ERROR );
-  }
+  /**
+  * Updates the current Article object in the database.
+  */
+  public function update() {
 
-  // update the Article
-  $conn = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
-  $sql = 'UPDATE articles SET
-          publicationDate=FROM_UNIX_TIME(:publicationDate), title=:title, summary=:summary, content=:content
-          WHERE id=:id';
-  $statement = $conn->prepare($sql);
-  $statement->bindValue(':publicationDate', $this->publicationDate, PDO::PARAM_INT);
-  $statement->bindValue(':title', $this->title, PDO::PARAM_STR);
-  $statement->bindValue(':summary', $this->summary, PDO::PARAM_STR);
-  $statement->bindValue(':content', $this->content, PDO::PARAM_STR);
-  $statement->bindValue(':id', $this->id, PDO_INT);
-  $statement->execute();
-  $conn = null;
-} // end of function: update()
+    // Does the Article object have an ID?
+    if ( is_null( $this->id ) ) trigger_error ( "Article::update(): Attempt to update an Article object that does not have its ID property set.", E_USER_ERROR );
+
+    // Update the Article
+    $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+    $sql = "UPDATE articles SET publicationDate=FROM_UNIXTIME(:publicationDate), title=:title, summary=:summary, content=:content WHERE id = :id";
+    $st = $conn->prepare ( $sql );
+    $st->bindValue( ":publicationDate", $this->publicationDate, PDO::PARAM_INT );
+    $st->bindValue( ":title", $this->title, PDO::PARAM_STR );
+    $st->bindValue( ":summary", $this->summary, PDO::PARAM_STR );
+    $st->bindValue( ":content", $this->content, PDO::PARAM_STR );
+    $st->bindValue( ":id", $this->id, PDO::PARAM_INT );
+    $st->execute();
+    $conn = null;
+  }
 
 
 /**

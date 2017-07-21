@@ -1,19 +1,22 @@
 <?php include "templates/include/header.php" ?>
 
-  <h1 style="width:75$">
-    <?php echo htmlspecialchars($results['article']->title) ?>
-  </h1>
-  <div style="width:75%; font-style:italic;">
-    <?php echo htmlspecialchars($results['article']->summary)?>
+  <div class="article_details">
+      <h1>
+        <?php echo htmlspecialchars($results['article']->title) ?>
+      </h1>
+      <div class="article_summary">
+        <?php echo htmlspecialchars($results['article']->summary)?>
+      </div>
+      <p class=pubDate>
+        Published on <?php echo date('j F Y', $results['article']->publicationDate)?>
+      </p>
   </div>
-  <div style="width:75%;">
+  <div class="article_content">
     <?php echo $results['article']->content?>
   </div>
-  <p class=pubDate>
-    Published on <?php echo date('j F Y', $results['article']->publicationDate)?>
-  </p>
+  
 
-  <p>
+  <p class="bottom">
     <a href="./">Return to homepage</a>
   </p>
 

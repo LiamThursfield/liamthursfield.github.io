@@ -83,6 +83,40 @@ p.bottom {
     color: #ccc;
 }
 
+/* View Article Page */
+.article_details {
+    padding: 10px;
+    background-color: #eee
+}
+
+.article_details h1{
+    margin: 0;
+    padding-bottom: 5px;
+    font-family: "Bree Serif", serif;
+    font-weight: 100;
+}
+
+.article_details .pubDate {
+    font-size: 14px;
+    color: #fd5a5d;
+}
+
+.article_summary {
+    font-style: italic;
+}
+
+.article_content {
+    padding: 10px;
+}
+
+.article_content h1, .article_content h2, .article_content h3, 
+.article_content h4, .article_content h5, .article_content h6 {
+    font-family: "Bree Serif", serif;
+    font-weight: 100;
+    margin: 0;
+}
+
+
 /* Archive List */
 
 .total {
@@ -147,7 +181,7 @@ form.login input[type=text], form.login input[type=password] {
     color: #eee;
 }
 
-form.login input[type=submit] {
+input[type=submit] {
     padding: 10px 40px;
     background: #fd5a5d;
     border: none;
@@ -156,11 +190,11 @@ form.login input[type=submit] {
     color: #eee;
 }
 
-form.login input[type=submit]:hover {
+input[type=submit]:hover {
     background: #fd686a;
 }
 
-form.login input[type=submit]:active {
+input[type=submit]:active {
     background: #fd4e51;
 }
 
@@ -198,7 +232,6 @@ form.login input[type=submit]:active {
     padding-top: 10px;
     color: #fff;
     font-size: 18px;
-    text-decoration: underline;
 }
 
 #adminHeader .username {
@@ -253,27 +286,43 @@ tr:hover {
 }
 
 /* Add New Article Form */
+.edit_article {
+    padding: 15px 50px;
+}
+
+.edit_article label {
+    display: block;
+}
+
+.edit_article input, .edit_article textarea {
+    margin: 5px 0 15px 0;
+    padding: 5px 5px;
+    font-family: "Numans", "Roboto", serif;
+    font-size: 16px;   
+}
+
+.edit_article input[type=text], .edit_article textarea {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.edit_article input[type=submit] {
+    padding: 10px 15px
+}
 
 
 /* Status and error boxes */
 
 .statusMessage, .errorMessage {
-  font-size: .8em;
-  padding: .5em;
-  margin: 2em 0;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
-  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
-  box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
-
+  font-size: 16px;
+  padding: 8px;
+  margin: 0 0 15px 0;
 }
 
 .statusMessage {
-  background-color: #2b2;
-  border: 1px solid #080;
-  color: #fff;
+    background-color: rgb(70,150,70);
+    border: 1px solid #242424;
+    color: #242424;
 }
 
 .errorMessage {
