@@ -64,3 +64,15 @@ function getFullMonth(monthInt) {
 function getShortMonth(monthInt) {
 	return getFullMonth(monthInt).substr(0, 3);
 }
+
+/**
+* Return the date in the format: DD MM YYYY
+* e. 21 January 2017
+*/
+function formatDate(dateToFormat) {
+	var day = dateToFormat.getDate();
+	var month = getFullMonth(dateToFormat.getMonth());
+	var year = dateToFormat.getFullYear();
+	
+	return day + " " + month + " " + year;
+}
