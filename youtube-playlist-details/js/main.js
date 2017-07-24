@@ -76,3 +76,19 @@ function formatDate(dateToFormat) {
 	
 	return day + " " + month + " " + year;
 }
+
+
+
+
+/**
+* Save a text object to a file, and download it
+* E.g a JSON.stringify() object
+*
+* Debug method to show the JSON contents
+*/
+function saveText(text, filename){
+	var a = document.createElement('a');
+	a.setAttribute('href', 'data:text/plain;charset=utf-u,'+encodeURIComponent(text));
+	a.setAttribute('download', filename);
+	a.click()
+}
