@@ -23,7 +23,7 @@ function getPlaylistId() {
 
 /**
 * Retrieve the requested playlist via the YouTupe Playlists api
-* @playlistId - the id of the playlist to retrieve
+* @id - the id of the playlist to retrieve
 */
 function retrievePlaylist(key, id, callback) {
     $.get(
@@ -41,6 +41,77 @@ function retrievePlaylist(key, id, callback) {
 function getPlaylistFromData(data)  {
     return data.items[0].snippet;
 }
+
+/**
+* Retrieve the requested playlist via the YouTupe Playlists api
+* @id - the id of the playlist to retrieve
+* @nextPageToken - the API retrieves playlistItems in pages, so if there is a nextPageToken
+*	then there is another page of playlistItems to retrieve
+*/
+function retrievePlaylistItems(key, id, callback, nextPageToken = null) {
+	var url = "https://www.googleapis.com/youtube/v3/playlistItems?key=" + key +
+		"&part=snippet" +
+		"&playlistId=" + id;
+	
+	if (nextPageToken != null) {
+		url += "&pageToken=" + nextPageToken;
+	}
+	$.get(url, callback);
+}
+
+/**
+* This function returns a PlaylistItem from data that is retrieved
+* via the Youtube API
+*/
+function getPlaylistItemFromData (data) {
+	var id = data.snippet.resourceId.videoId;
+	var title = data.snippet.title;
+	var author = data.snippet.channelTitle;
+	var uploaded_date = data.snippet.publishedAt;
+	var description = data.snippet.description;
+	var thumbnail = data.snippet.thumbnails.medium.url
+	var position = data.snippet.position;
+	
+	item = new PlaylistItem(
+		id, title, author, uploaded_date, description, thumbnail, position
+	);
+	
+	return item; 
+}
+
+/**
+* A Playlist item, is an object that contains the key details 
+* of a youtube video in a Youtube Playlist
+*/
+function PlaylistItem(id, title, author, uploaded_date, description, thumbnail, position, video_length=0) {
+	this.id = id;
+	this.title = title;
+	this.author = author;
+	this.uploaded_date = uploaded_date;
+	this.description = description;
+	this.thumbnail = thumbnail;
+	this.position = position;
+	this.video_length = 0;
+}
+
+/**
+* A function that takes a playlist item, and fetches its length via the Youtube API
+*/
+function retrieveVideoLength(key, playlistItem) {
+	var url = "https://www.googleapis.com/youtube/v3/videos?key=" + key +
+		"&part=contentDetails" +
+		"&id=" + playlistItem.id;
+	
+	return jQuery.ajax({
+		url: url,
+		success: function(result) {
+			console.log(result.items[0].contentDetails.duration);
+			playlistItem.video_length = result.items[0].contentDetails.duration;
+		}
+	});
+	
+}
+
 
 
 
