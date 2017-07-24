@@ -41,3 +41,26 @@ function retrievePlaylist(key, id, callback) {
 function getPlaylistFromData(data)  {
     return data.items[0].snippet;
 }
+
+
+
+/**
+* Return the Month Text for a month integer
+* E.g. return January for 0; December for 11
+*/
+function getFullMonth(monthInt) {
+	var months = [
+		"January", "February", "March", "April", "May", "June",
+		"July", "August", "September", "October", "November", "December"
+	];
+	
+	return months[monthInt];
+}
+
+/**
+* Return the 3 part string of the Month Text for a month integer
+* E.g. return Jan for 0; Dec for 11
+*/
+function getShortMonth(monthInt) {
+	return getFullMonth(monthInt).substr(0, 3);
+}
