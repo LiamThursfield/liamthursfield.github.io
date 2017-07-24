@@ -156,7 +156,7 @@ header h1 {
 .main .card {
     background-color: #fff;
     display: grid;
-    grid-template-columns: 200px 10px 1fr;
+    grid-template-columns: 200px 20px 1fr;
     align-content: center;
     justify-content: center;
     align-items:flex-start;

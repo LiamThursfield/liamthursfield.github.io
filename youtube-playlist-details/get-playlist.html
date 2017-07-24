@@ -13,10 +13,38 @@
 <body>
     <div id="site-container" class="flex-center-xy">
         <header>
-            <h1><span class="youtube">YouTube</span> Playlist Details</h1>
-            <h2>Playlist Id: <span id="playlist-id" class="youtube"></span></h2>
-        </header>
+			<h1>
+				<a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
+				<span class="youtube">YouTube</span> 
+				<span style="white-space: nowrap">Playlist Details</span>
+				<!-- DEBUG -->
+<!--				<h2>Playlist Id: <span id="playlist-id" class="youtube"></span></h2>-->
+			</h1>
+		</header>
+		
+		<div class="main">
+			<div class="details card">
+				<div class="thumbnail">
+					<img id="playlist-thumbnail" src="" alt="Playlist thumbnail">
+				</div>
+				<div class="content">
+					<h2 id="playlist-title">TITLE</h2>
+					<p>
+						<span id="playlist-author" class="uploaded-author">Author</span> - Created on <span class="uploaded-date">DATE</span>
+					</p>
+					<p id="playlist-description" class="description">DESCRIPTION</p>
+					<p class="video-length">Total playlist time: <span id="playlist-length">TIME</span></p>
+				</div>
+			</div>
+			
+		</div> <!-- End of div-class: "Main" -->
+		
+		
+		
+		
+		
 <!--        
+            
         <script>
             var playlist_id = ""; // create variable for playlist id
             args = location.search.substr(1).split(/&/); // create an array, containing all the GET args
