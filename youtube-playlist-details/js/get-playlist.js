@@ -33,6 +33,8 @@ function showPlaylistInfo(data) {
 //    }
 	document.getElementById("playlist-title").innerHTML = playlist['title'];
 	document.getElementById("playlist-author").innerHTML = playlist['channelTitle'];
+	document.getElementById("playlist-uploaded-date").innerHTML = 
+		formatDate(new Date(playlist['publishedAt']));	
 	document.getElementById("playlist-description").innerHTML = playlist['description'];
 	document.getElementById("playlist-thumbnail").setAttribute("src",
         playlist['thumbnails']["high"]["url"]);
