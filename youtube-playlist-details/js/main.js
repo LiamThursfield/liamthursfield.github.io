@@ -155,8 +155,6 @@ function PlayListItemView(playlistItem, grid_pos={col_start:0, col_end:0, row_st
 		html_view += "<div id='" + this.id + "' class='video-item card' style='"  +
 			"grid-column-start:" + this.col_start + ";" +
 			"grid-column-end:" + this.col_end + ";" +
-			"grid-row-start:" + this.row_start + ";" +
-			"grid-row-end:" + this.row_end + ";" +
 			"'>";
 		
 		// add thumbnail & video length
@@ -221,7 +219,7 @@ function getShortMonth(monthInt) {
 */
 function formatDate(dateToFormat) {
 	var day = dateToFormat.getDate();
-	var month = getFullMonth(dateToFormat.getMonth());
+	var month = getShortMonth(dateToFormat.getMonth());
 	var year = dateToFormat.getFullYear();
 	
 	return day + " " + month + " " + year;

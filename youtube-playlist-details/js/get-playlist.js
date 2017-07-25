@@ -1,5 +1,5 @@
 // TODO: REMOVE THIS VAR
-var DEBUG = false;
+var DEBUG = true;
 
 var api_key = getApiKey();
 var playlist_id = getPlaylistId();
@@ -9,7 +9,7 @@ var playListItemViews = [];
 
 // whilst debugging: provide a playlist id
 if (DEBUG) {
-	playlist_id = "PLdQ5Kj7BrK-GyMtecfP21KsAxptXwnC4a";
+	playlist_id = "PLE7E8B7F4856C9B19";
 }
 
 // if there is no playlist url:
@@ -63,10 +63,7 @@ function loadPlaylistItems(data) {
 	} else {
 		// the video grid
 		var video_grid = document.getElementsByClassName("video-grid")[0];
-		// determine the number of rows needed for the number of videos
-		var numRows = Math.floor((playlistItems.length + 1) / 2);
-		video_grid.setAttribute("style", "grid-template-rows: repeat(" + numRows + ", auto 15px)!important;");
-		
+				
 		// show the video cards
 		for (var count = 0; count < playlistItems.length; count++) {
 			var grid_pos = {}
@@ -81,12 +78,8 @@ function loadPlaylistItems(data) {
 			} else {
 				// odd count - secoind column
 				grid_pos.col_start = 3;
-				grid_pos.col_end = 4;
+				grid_pos.col_end = 5;
 			}
-			
-			// determine the row position
-			grid_pos.row_start = (Math.floor(count / 2) * 2) + 1;
-			grid_pos.row_end = grid_pos.row_start + 1;
 			
 			// add the playlistItemView to the list
 			playListItemViews.push(
