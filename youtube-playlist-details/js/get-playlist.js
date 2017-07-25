@@ -8,6 +8,7 @@ var api_key = getApiKey();
 var playlist_id = getPlaylistId();
 
 var playlistItems = [];
+var playListItemViews = [];
 
 //TODO: REMOVE CHECK FOR DEBUG URL
 // if there is no playlist url:
@@ -66,9 +67,42 @@ function loadPlaylistItems(data) {
 	if (nextPage != null) {
 		retrievePlaylistItems(api_key, playlist_id, loadPlaylistItems, nextPage);
 	} else {
-		for (var count= 0; count < playlistItems.length; count++) {
+		// the video grid
+		var video_grid = document.getElementsByClassName("video-grid")[0];
+		var numRows = Math.floor((playlistItems.length + 1) / 2);
+		video_grid.setAttribute("style", "grid-template-rows: repeat(" + numRows + ", auto 15px)!important;");
+		
+		// show the video cards
+		for (var count = 0; count < playlistItems.length; count++) {
+			var grid_pos = {}
+			// use the count to determine the grid position of the video card
+			// there are two columns, so:
+			// 	even count should be in the first column (0-index)
+			// 	odd count should be in the second column
+			if (count % 2 == 0) {
+				// even count - first column
+				grid_pos.col_start = 1;
+				grid_pos.col_end = 2;
+			} else {
+				// odd count - secoind column
+				grid_pos.col_start = 3;
+				grid_pos.col_end = 4;
+			}
+			
+			// determine the row position
+			grid_pos.row_start = (Math.floor(count / 2) * 2) + 1;
+			grid_pos.row_end = grid_pos.row_start + 1;
+			
+			playListItemViews.push(
+				new PlayListItemView(playlistItems[count], grid_pos)
+			);
+			
+			video_grid.innerHTML += (playListItemViews[count].toString());
+			
+			// get the video length
 			retrieveVideoLength(api_key, playlistItems[count]);
 		}
+		
 	}
 }
 
