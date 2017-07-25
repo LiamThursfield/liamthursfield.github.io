@@ -14,7 +14,7 @@ if (DEBUG) {
 
 // if there is no playlist url:
 if (!playlist_id) {
-    alert("No URL was entered. Re-directing to the home page.");
+    alert("No URL was entered. Returning to the home page.");
     window.location.href = 'index.html';
 }
 
@@ -25,6 +25,12 @@ retrievePlaylist(api_key, playlist_id, showPlaylistInfo);
 * Show the playlist details
 */
 function showPlaylistInfo(data) {
+	if (data.pageInfo.totalResults == 0) {
+		document.getElementsByClassName("main")[0].innerHTML = 
+			"<div class='error-box'><h2>Invalid Playlist</h2><p>Please try again.</p>" +
+			"<a href='index.html'><i class='fa fa-arrow-left' aria-hidden='true'></i> Go Back</a></div>";
+	}
+	
     var playlist = getPlaylistFromData(data);
 	
 	document.getElementById("playlist-title").innerHTML = playlist['title'];

@@ -379,6 +379,27 @@ header h1 {
 	font-size: 18px;
 }
 
+.error-box {
+	background-color: #c4283d;
+	color: #222;
+	transition: 0.3s;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 2px; /* 5px rounded corners */
+	text-align: center;
+	padding: 15px 15px 15px 15px;
+	font-size: 20px;
+}
+
+.error-box h2 {
+	padding: 0;
+	margin: 0;
+	color: #000;
+}
+
+.error-box a {
+	color: #fff;
+	text-decoration: underline
+}
 
 
 
