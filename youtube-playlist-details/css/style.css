@@ -195,6 +195,7 @@ header h1 {
 	display: inline-block;
 	word-wrap: break-word;
 	word-break: break-word;
+	width: 100%;
     max-width: 975px;
     margin: 0 auto;
     text-align: left;
@@ -234,6 +235,7 @@ header h1 {
 }
 
 .main .uploaded-date {
+	font-family: "Roboto Condensed", sans-serif;
     font-size: 14px;
 }
 
@@ -263,10 +265,6 @@ header h1 {
 		word-break: break-word;
 	}
 	
-	.main .description {
-		display: none;
-	}
-	
 	.main .details {
 		text-align: center;
 	}
@@ -285,7 +283,6 @@ header h1 {
 		grid-row-end: 4;
 		margin: auto;
 		width: 100%;
-		max-width: 250px;
 		padding-top: 15px;
 	}
 	
@@ -316,6 +313,24 @@ header h1 {
 	.video-item {
 		grid-column-start: 1 !important;
 		grid-column-end: 4 !important;
+	}
+	
+	.video-item .description {
+		display: none;
+	}
+	
+	.video-item h3 {
+		font-size: 16px;
+	}
+	
+	.video-item p {
+		font-size: 14px;
+		font-weight: 100;
+		padding-top: 3px;
+	}
+	
+	.video-item .uploaded-date {
+		padding-top: 5px;
 	}
 }
 
