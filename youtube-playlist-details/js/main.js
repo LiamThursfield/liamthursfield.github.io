@@ -159,9 +159,9 @@ function PlayListItemView(playlistItem, grid_pos={col_start:0, col_end:0, row_st
 			"grid-row-end:" + this.row_end + ";" +
 			"'>";
 		
-		// add thumbnail
+		// add thumbnail & video length
 		html_view += "<div class='thumbnail'><img src='" + this.thumbnail + "' alt='Video Thumbnail'/>" + 
-			"<p class='playlist-length'><span id='" + this.id + "-length'>" + this.video_length + "</span></p>"
+			"<p class='video-length'><span id='" + this.id + "-length'>" + this.video_length + "</span></p>"
 			+ "</div>";
 		
 		// add opening content div
