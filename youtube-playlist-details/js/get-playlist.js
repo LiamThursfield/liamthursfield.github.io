@@ -1,8 +1,5 @@
 // TODO: REMOVE THIS VAR
 var DEBUG = false;
-var DEBUG_CHECK_FOR_URL = false; // DEBUG: should we check for a playlist url
-var DEBUG_SHOW_ID_AND_KEY = false;
-
 
 var api_key = getApiKey();
 var playlist_id = getPlaylistId();
@@ -10,18 +7,15 @@ var playlist_id = getPlaylistId();
 var playlistItems = [];
 var playListItemViews = [];
 
-//TODO: REMOVE CHECK FOR DEBUG URL
-// if there is no playlist url:
-if (!playlist_id && DEBUG_CHECK_FOR_URL) {
-    alert("No URL was entered. Re-directing to the home page.");
-    window.location.href = 'index.html';
-}
+// whilst debugging: provide a playlist id
 if (DEBUG) {
 	playlist_id = "PLdQ5Kj7BrK-GyMtecfP21KsAxptXwnC4a";
 }
-if (DEBUG_SHOW_ID_AND_KEY) {
-	var span_playlist_id = document.getElementById("playlist-id"); // get the span that will display the url
-	span_playlist_id.innerHTML = playlist_id + " <br/>" + api_key; // display the url
+
+// if there is no playlist url:
+if (!playlist_id) {
+    alert("No URL was entered. Re-directing to the home page.");
+    window.location.href = 'index.html';
 }
 
 // retrieve the playlist and show its details
