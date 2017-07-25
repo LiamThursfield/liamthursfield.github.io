@@ -176,6 +176,10 @@ header h1 {
     border-radius: 2px; /* 5px rounded corners */
 }
 
+.main .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
 .main {
     width: 100%;
     max-width: 975px;
@@ -225,6 +229,19 @@ header h1 {
 	color: #999;
 }
 
+.main p.video-length {
+	margin: 0;
+	padding: 3px;
+	background-color: #263545;
+	color: #eee;
+	text-align: center;
+	font-size: 16px;
+}
+
+.main p.video-length span {
+	display: block;
+}
+
 
 /* THE VIDEO GRID */
 
@@ -241,10 +258,6 @@ header h1 {
 	align-content: flex-start!important;
 }
 
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
 .video-item .thumbnail{
 	grid-column-start: 1;
 	grid-column-end: 2;
@@ -258,15 +271,16 @@ header h1 {
 	margin: 0;
 }
 
-.video-item .thumbnail p{
-	margin: 0;
-	font-size: 13px;
-}
-
 .video-item .content .description {
 	padding: 0px 0;
 	font-size: 14px;
 }
+
+.video-item p.video-length {
+	font-size: 14px;
+}
+
+/* CARD TO DISPLAY WHILST LOADING VIDEOS*/
 
 #loading-videos {
 	display: block;
