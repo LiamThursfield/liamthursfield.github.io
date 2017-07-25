@@ -225,7 +225,7 @@ header h1 {
 	grid-template-columns: 150px 10px 1fr !important;
 }
 
-.video-item.card:hover {
+.card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
