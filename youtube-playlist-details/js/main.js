@@ -94,6 +94,7 @@ function PlaylistItem(id, title, author, uploaded_date, description, thumbnail, 
 	this.video_length = 0;
 }
 
+
 /**
 * A function that takes a playlist item, and fetches its length via the Youtube API
 */
@@ -105,13 +106,82 @@ function retrieveVideoLength(key, playlistItem) {
 	return jQuery.ajax({
 		url: url,
 		success: function(result) {
-			console.log(result.items[0].contentDetails.duration);
-			playlistItem.video_length = result.items[0].contentDetails.duration;
+			var video_length = result.items[0].contentDetails.duration
+			console.log(video_length);
+			playlistItem.video_length = video_length;
+			
+			var lengthSource = document.getElementById(playlistItem.id + "-length");
+			if (lengthSource != null) {
+				lengthSource.textContent = video_length;
+			}
 		}
 	});
 	
 }
 
+/**
+* A PlaylistItemView, is an object that contains the html to show a PlayListItem
+* @playlistItem - the playlist item to show
+*/
+function PlayListItemView(playlistItem, grid_pos={col_start:0, col_end:0, row_start:0, row_end:0}) {
+	this.playlistItem = playlistItem;
+	this.id = playlistItem.id;
+	this.title = playlistItem.title;
+	this.author = playlistItem.author;
+	this.uploaded_date = playlistItem.uploaded_date;
+	this.description = playlistItem.description;
+	this.thumbnail = playlistItem.thumbnail;
+	this.position = playlistItem.position;
+	this.video_length = playlistItem.video_length;
+	
+	this.col_start = grid_pos.col_start;
+	this.col_end = grid_pos.col_end;
+	this.row_start = grid_pos.row_start;
+	this.row_end = grid_pos.row_end;
+	
+	
+	PlayListItemView.prototype.toString = function() {
+		var html_view = "";
+		// add opening card div, with the grid position
+		html_view += "<div id='" + this.id + "' class='video-item card' style='"  +
+			"grid-column-start:" + this.col_start + ";" +
+			"grid-column-end:" + this.col_end + ";" +
+			"grid-row-start:" + this.row_start + ";" +
+			"grid-row-end:" + this.row_end + ";" +
+			"'>";
+		
+		// add thumbnail
+		html_view += "<div class='thumbnail'><img src='" + this.thumbnail + "' alt='Video Thumbnail'/>" + 
+			"<p class='playlist-length'><span id='" + this.id + "-length'>" + this.video_length + "</span></p>"
+			+ "</div>";
+		
+		// add opening content div
+		html_view += "<div class='content'>";
+		
+		// add video title
+		html_view += "<h3 class='video-title'>" + this.title + "</h3>";
+		
+		// add author and uploaded date
+		html_view += "<p><span class='uploaded-author'>" + this.author + "</span> " +
+			"<span class='uploaded-date'>- " + formatDate(new Date(this.uploaded_date)) + "</span></p>";
+		
+		// if the description is > 100 chars, shorten it and add "..."
+		var shortDescription = "";
+		if (this.description.length > 100) {
+			shortDescription = this.description.substr(0, 100) + "...";
+		}
+		// add description
+		html_view += "<p class='description'>" + shortDescription + "</p>";
+		
+		// add closing content div
+		html_view += "</div>"
+		
+		// add closing card div
+		html_view += "</div>"
+		
+		return html_view;
+	}
+}
 
 
 
