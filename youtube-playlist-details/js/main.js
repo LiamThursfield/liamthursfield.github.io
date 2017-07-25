@@ -170,7 +170,7 @@ function PlayListItemView(playlistItem, grid_pos={col_start:0, col_end:0, row_st
 		
 		// add author and uploaded date
 		html_view += "<p><span class='uploaded-author'>" + this.author + "</span> " +
-			"<span class='uploaded-date'>- " + formatDate(new Date(this.uploaded_date)) + "</span></p>";
+			"<span class='uploaded-date'>" + formatDate(new Date(this.uploaded_date)) + "</span></p>";
 		
 		// if the description is > 100 chars, shorten it and add "..."
 		var shortDescription = "";
