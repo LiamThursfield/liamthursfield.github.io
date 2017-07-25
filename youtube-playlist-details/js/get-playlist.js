@@ -33,7 +33,7 @@ function showPlaylistInfo(data) {
 		formatDate(new Date(playlist['publishedAt']));	
 	document.getElementById("playlist-description").innerHTML = playlist['description'];
 	document.getElementById("playlist-thumbnail").setAttribute("src",
-        playlist['thumbnails']["high"]["url"]);
+        playlist['thumbnails']["medium"]["url"]);
 	
 	// ensure the playlist item list is empty, then get all the videos in the playlist
 	playlistItems = [];
