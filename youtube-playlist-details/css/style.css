@@ -237,6 +237,7 @@ header h1 {
 .main .uploaded-date {
 	font-family: "Roboto Condensed", sans-serif;
     font-size: 14px;
+	color: #777;
 }
 
 .main p.description {
@@ -288,6 +289,7 @@ header h1 {
 	
 	.main .uploaded-date {
 		display: block;
+		padding-top: 5px;
 	}
 }
 
@@ -308,33 +310,6 @@ header h1 {
 	grid-template-columns: 150px 10px 1fr !important;
 	align-content: flex-start!important;
 }
-
-@media screen and (max-width: 850px) {
-	.video-item {
-		grid-column-start: 1 !important;
-		grid-column-end: 4 !important;
-	}
-	
-	.video-item .description {
-		display: none;
-	}
-	
-	.video-item h3 {
-		font-size: 16px;
-	}
-	
-	.video-item p {
-		font-size: 14px;
-		font-weight: 100;
-		padding-top: 3px;
-	}
-	
-	.video-item .uploaded-date {
-		padding-top: 5px;
-	}
-}
-
-
 
 .video-item .thumbnail{
 	grid-column-start: 1;
@@ -361,6 +336,36 @@ header h1 {
 .video-item p.video-length {
 	font-size: 14px;
 }
+
+@media screen and (max-width: 850px) {
+	.video-item {
+		grid-column-start: 1 !important;
+		grid-column-end: 4 !important;
+	}
+	
+	.video-item h3 {
+		font-size: 16px;
+	}
+	
+	.video-item p {
+		font-size: 14px;
+		font-weight: 100;
+		padding-top: 3px;
+	}
+	
+	.video-item .description, .video-item h3 {
+		display: inline-block;
+		word-wrap: break-word;
+		word-break: break-word;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.main .video-item .description {
+		display: none;
+	}
+}
+
 
 /* CARD TO DISPLAY WHILST LOADING VIDEOS*/
 
