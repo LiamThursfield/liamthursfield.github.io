@@ -252,55 +252,15 @@ header h1 {
 	font-size: 14px;
 }
 
-.video-item.video-a {
+#loading-videos {
+	display: block;
 	grid-column-start: 1;
-	grid-column-end: 2;
-	grid-row-start: 1;
-	grid-row-end: 2;
-}
-
-.video-item.video-b {
-	grid-column-start: 3;
 	grid-column-end: 4;
 	grid-row-start: 1;
 	grid-row-end: 2;
+	text-align: center;
+	font-size: 18px;
 }
-
-.video-item.video-c {
-	grid-column-start: 1;
-	grid-column-end: 2;
-	grid-row-start: 3;
-	grid-row-end: 4;
-}
-
-.video-item.video-d {
-	grid-column-start: 3;
-	grid-column-end: 4;
-	grid-row-start: 3;
-	grid-row-end: 4;
-}
-
-.video-item.video-e {
-	grid-column-start: 1;
-	grid-column-end: 2;
-	grid-row-start: 5;
-	grid-row-end: 6;
-}
-
-.video-item.video-f {
-	grid-column-start: 3;
-	grid-column-end: 4;
-	grid-row-start: 5;
-	grid-row-end: 6;
-}
-
-.video-item.video-g {
-	grid-column-start: 1;
-	grid-column-end: 2;
-	grid-row-start: 7;
-	grid-row-end: 8;
-}
-
 
 
 

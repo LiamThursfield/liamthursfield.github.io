@@ -106,14 +106,23 @@ function retrieveVideoLength(key, playlistItem) {
 	return jQuery.ajax({
 		url: url,
 		success: function(result) {
-			var video_length = result.items[0].contentDetails.duration
-			console.log(video_length);
+			// get the video duration and update the playlistItem
+			var video_length = YTDurationToSeconds(result.items[0].contentDetails.duration);
+			// console.log(video_length); // log the duration
 			playlistItem.video_length = video_length;
 			
-			var lengthSource = document.getElementById(playlistItem.id + "-length");
-			if (lengthSource != null) {
-				lengthSource.textContent = video_length;
+			// get the html element that dispalays the video length - and show the length
+			var lengthElement = document.getElementById(playlistItem.id + "-length");
+			if (lengthElement != null) {
+				lengthElement.textContent = secToTime(video_length);
 			}
+			
+			var playlistLengthElement = document.getElementById("playlist-length");
+			var playlistLengthElementMilisecs = document.getElementById("playlist-length-ms");
+			
+			playlistLengthElementMilisecs.innerHTML = 
+				parseInt(playlistLengthElementMilisecs.innerHTML) + video_length;
+			playlistLengthElement.innerHTML = secToTime(playlistLengthElementMilisecs.innerHTML);
 		}
 	});
 	
@@ -217,6 +226,45 @@ function formatDate(dateToFormat) {
 	
 	return day + " " + month + " " + year;
 }
+
+// FOUND ON STACKOVERFLOW: https://stackoverflow.com/questions/22148885/converting-youtube-data-api-v3-video-duration-format-to-seconds-in-javascript-no
+// Used to take a Youtube Duration and return the duration in seconds
+function YTDurationToSeconds(duration) {
+  var match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/)
+
+  var hours = (parseInt(match[1]) || 0);
+  var minutes = (parseInt(match[2]) || 0);
+  var seconds = (parseInt(match[3]) || 0);
+
+  return hours * 3600 + minutes * 60 + seconds;
+}
+
+
+/*
+* modified from stackoverflow: https://stackoverflow.com/questions/19700283/how-to-convert-time-milliseconds-to-hours-min-sec-format-in-javascript
+* Format a time, in milliseconds to:
+* HH:MM:SS - where HH is optional, and won't appear if time < 60 minutes
+*/
+function secToTime(duration) {
+	var milliseconds = parseInt((duration)/100)
+		, seconds = parseInt((duration)%60)
+		, minutes = parseInt((duration/60)%60)
+		, hours = parseInt((duration/(60*60)%24));
+
+	hours = (hours < 10) ? "0" + hours : hours;
+	minutes = (minutes < 10) ? "0" + minutes : minutes;
+	seconds = (seconds < 10) ? "0" + seconds : seconds;
+	
+	var formattedTime = "";
+	if (parseInt(hours) != 0) {
+		formattedTime += hours + ":";
+	}
+	
+	formattedTime += minutes + ":" + seconds;
+
+	return formattedTime;
+}
+
 
 
 

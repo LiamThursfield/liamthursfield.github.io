@@ -69,6 +69,7 @@ function loadPlaylistItems(data) {
 	} else {
 		// the video grid
 		var video_grid = document.getElementsByClassName("video-grid")[0];
+		// determine the number of rows needed for the number of videos
 		var numRows = Math.floor((playlistItems.length + 1) / 2);
 		video_grid.setAttribute("style", "grid-template-rows: repeat(" + numRows + ", auto 15px)!important;");
 		
@@ -93,11 +94,16 @@ function loadPlaylistItems(data) {
 			grid_pos.row_start = (Math.floor(count / 2) * 2) + 1;
 			grid_pos.row_end = grid_pos.row_start + 1;
 			
+			// add the playlistItemView to the list
 			playListItemViews.push(
 				new PlayListItemView(playlistItems[count], grid_pos)
 			);
 			
+			// show the playlist item view
 			video_grid.innerHTML += (playListItemViews[count].toString());
+			
+			// hide the Loading div
+			document.getElementById("loading-videos").style.display = "none";
 			
 			// get the video length
 			retrieveVideoLength(api_key, playlistItems[count]);
