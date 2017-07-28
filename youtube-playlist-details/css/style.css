@@ -299,13 +299,13 @@ header h1 {
 .video-grid {
 	display: grid;
 	margin-top: 15px;
-	grid-template-columns: 0.5fr 15px 0.5fr;
+	grid-template-columns: 0.5fr 0.5fr;
+	grid-gap: 15px;
 }
 
 .video-item {
 	min-width: 100%;
 	padding: 10px;
-	margin-bottom: 15px;
 	display: grid;
 	grid-template-columns: 150px 10px 1fr !important;
 	align-content: flex-start!important;

@@ -1,5 +1,5 @@
 // TODO: REMOVE THIS VAR
-var DEBUG = false;
+var DEBUG = true;
 
 var api_key = getApiKey();
 var playlist_id = getPlaylistId();
@@ -7,8 +7,14 @@ var playlist_id = getPlaylistId();
 var playlistItems = [];
 var playListItemViews = [];
 
+// the video grid
+var video_grid = document.getElementsByClassName("video-grid")[0];
+
+var debug_count = 0;
+
 // whilst debugging: provide a playlist id
 if (DEBUG) {
+	playlist_id = "PLu1nstonJHbQGN0kQJ-UFrMDc9fwMpeIS";
 	playlist_id = "PLE7E8B7F4856C9B19";
 }
 
@@ -49,6 +55,8 @@ function showPlaylistInfo(data) {
 
 // load the playlist items (videos)
 function loadPlaylistItems(data) {
+	debug_count++;
+	
 	var nextPage = null;
 	//  details are loaded in pages, so a check is made for the key: nextPageToken
 	if (data.hasOwnProperty("nextPageToken")) {
@@ -60,36 +68,19 @@ function loadPlaylistItems(data) {
 		playlistItems.push(getPlaylistItemFromData(
 			data.items[count]
 		));
+		console.log(debug_count + ": " + count);
 	}
 	
 	// if there is another page to load - load it
 	// otherwise, get the video lengths for the playlist items
 	if (nextPage != null) {
 		retrievePlaylistItems(api_key, playlist_id, loadPlaylistItems, nextPage);
-	} else {
-		// the video grid
-		var video_grid = document.getElementsByClassName("video-grid")[0];
-				
+	} else {				
 		// show the video cards
 		for (var count = 0; count < playlistItems.length; count++) {
-			var grid_pos = {}
-			// use the count to determine the grid position of the video card
-			// there are two columns, so:
-			// 	even count should be in the first column (0-index)
-			// 	odd count should be in the second column
-			if (count % 2 == 0) {
-				// even count - first column
-				grid_pos.col_start = 1;
-				grid_pos.col_end = 2;
-			} else {
-				// odd count - secoind column
-				grid_pos.col_start = 3;
-				grid_pos.col_end = 5;
-			}
-			
 			// add the playlistItemView to the list
 			playListItemViews.push(
-				new PlayListItemView(playlistItems[count], grid_pos)
+				new PlayListItemView(playlistItems[count])
 			);
 			
 			// show the playlist item view

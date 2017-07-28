@@ -51,6 +51,7 @@ function getPlaylistFromData(data)  {
 function retrievePlaylistItems(key, id, callback, nextPageToken = null) {
 	var url = "https://www.googleapis.com/youtube/v3/playlistItems?key=" + key +
 		"&part=snippet" +
+		"&maxResults=50" +
 		"&playlistId=" + id;
 	
 	if (nextPageToken != null) {
@@ -69,7 +70,11 @@ function getPlaylistItemFromData (data) {
 	var author = data.snippet.channelTitle;
 	var uploaded_date = data.snippet.publishedAt;
 	var description = data.snippet.description;
-	var thumbnail = data.snippet.thumbnails.medium.url
+	try {
+		var thumbnail = data.snippet.thumbnails.medium.url;
+	} catch (err) {
+		thumbnail = "http://www.liamthursfield.me/youtube-playlist-details/img/thumb_priv.png";
+	}
 	var position = data.snippet.position;
 	
 	item = new PlaylistItem(
@@ -132,7 +137,7 @@ function retrieveVideoLength(key, playlistItem) {
 * A PlaylistItemView, is an object that contains the html to show a PlayListItem
 * @playlistItem - the playlist item to show
 */
-function PlayListItemView(playlistItem, grid_pos={col_start:0, col_end:0, row_start:0, row_end:0}) {
+function PlayListItemView(playlistItem) {
 	this.playlistItem = playlistItem;
 	this.id = playlistItem.id;
 	this.title = playlistItem.title;
@@ -143,19 +148,11 @@ function PlayListItemView(playlistItem, grid_pos={col_start:0, col_end:0, row_st
 	this.position = playlistItem.position;
 	this.video_length = playlistItem.video_length;
 	
-	this.col_start = grid_pos.col_start;
-	this.col_end = grid_pos.col_end;
-	this.row_start = grid_pos.row_start;
-	this.row_end = grid_pos.row_end;
-	
 	
 	PlayListItemView.prototype.toString = function() {
 		var html_view = "";
 		// add opening card div, with the grid position
-		html_view += "<div id='" + this.id + "' class='video-item card' style='"  +
-			"grid-column-start:" + this.col_start + ";" +
-			"grid-column-end:" + this.col_end + ";" +
-			"'>";
+		html_view += "<div id='" + this.id + "' class='video-item card' >";
 		
 		// add thumbnail & video length
 		html_view += "<div class='thumbnail'><img src='" + this.thumbnail + "' alt='Video Thumbnail'/>" + 
