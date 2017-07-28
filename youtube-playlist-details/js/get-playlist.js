@@ -14,9 +14,9 @@ var debug_count = 0;
 
 // whilst debugging: provide a playlist id
 if (DEBUG) {
-	playlist_id = "PLE7E8B7F4856C9B19"; // 95 videos
-	playlist_id = "PLu1nstonJHbQGN0kQJ-UFrMDc9fwMpeIS"; // 907 videos
 	playlist_id = "PL3XZNMGhpynMp4Q9oiLhffheHJtYhP2bp"; // 241 videos
+	playlist_id = "PLu1nstonJHbQGN0kQJ-UFrMDc9fwMpeIS"; // 907 videos
+	playlist_id = "PLE7E8B7F4856C9B19"; // 95 videos
 }
 
 // if there is no playlist url:

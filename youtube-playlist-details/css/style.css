@@ -405,7 +405,31 @@ header h1 {
 	text-decoration: underline
 }
 
+/* Back to top button */
+#backToTopBtn {
+	display: none;  /*Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+	
+	font-size: 16px;
+    margin: auto;
+    padding: 13px 25px;
+    border: 2px solid #C4283D;
+    background-color: #C4283D;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+ 
+	
+	
+}
 
+#backToTopBtn:hover {
+	background-color: #C93D50;
+}
 
 
 
