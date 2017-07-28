@@ -14,8 +14,9 @@ var debug_count = 0;
 
 // whilst debugging: provide a playlist id
 if (DEBUG) {
-	playlist_id = "PLu1nstonJHbQGN0kQJ-UFrMDc9fwMpeIS";
-	playlist_id = "PLE7E8B7F4856C9B19";
+	playlist_id = "PLE7E8B7F4856C9B19"; // 95 videos
+	playlist_id = "PLu1nstonJHbQGN0kQJ-UFrMDc9fwMpeIS"; // 907 videos
+	playlist_id = "PL3XZNMGhpynMp4Q9oiLhffheHJtYhP2bp"; // 241 videos
 }
 
 // if there is no playlist url:
@@ -37,6 +38,9 @@ function showPlaylistInfo(data) {
 			"<a href='index.html'><i class='fa fa-arrow-left' aria-hidden='true'></i> Go Back</a></div>";
 	}
 	
+	var numVideos = data.items[0].contentDetails.itemCount;
+	document.getElementById("videos-to-load").innerHTML = numVideos;
+	
     var playlist = getPlaylistFromData(data);
 	
 	document.getElementById("playlist-title").innerHTML = playlist['title'];
@@ -47,6 +51,8 @@ function showPlaylistInfo(data) {
 	document.getElementById("playlist-thumbnail").setAttribute("src",
         playlist['thumbnails']["medium"]["url"]);
 	
+	
+	
 	// ensure the playlist item list is empty, then get all the videos in the playlist
 	playlistItems = [];
 	retrievePlaylistItems(api_key, playlist_id, loadPlaylistItems);
@@ -55,7 +61,8 @@ function showPlaylistInfo(data) {
 
 // load the playlist items (videos)
 function loadPlaylistItems(data) {
-	debug_count++;
+	// store current size of playlistItems, so that only the new videos are added to the view
+	var itemsInList = playlistItems.length;
 	
 	var nextPage = null;
 	//  details are loaded in pages, so a check is made for the key: nextPageToken
@@ -68,32 +75,31 @@ function loadPlaylistItems(data) {
 		playlistItems.push(getPlaylistItemFromData(
 			data.items[count]
 		));
-		console.log(debug_count + ": " + count);
+		console.log(itemsInList + ": " + count);
 	}
 	
-	// if there is another page to load - load it
-	// otherwise, get the video lengths for the playlist items
-	if (nextPage != null) {
-		retrievePlaylistItems(api_key, playlist_id, loadPlaylistItems, nextPage);
-	} else {				
-		// show the video cards
-		for (var count = 0; count < playlistItems.length; count++) {
-			// add the playlistItemView to the list
-			playListItemViews.push(
-				new PlayListItemView(playlistItems[count])
-			);
 			
-			// show the playlist item view
-			video_grid.innerHTML += (playListItemViews[count].toString());
-			
-			// hide the Loading div
-			document.getElementById("loading-videos").style.display = "none";
-			
-			// get the video length
-			retrieveVideoLength(api_key, playlistItems[count]);
-		}
-		
+	// show the video cards
+	for (var count = itemsInList; count < playlistItems.length; count++) {
+		// add the playlistItemView to the list
+//		playListItemViews.push(
+//		new PlayListItemView(playlistItems[count])
+//			);
+
+		// show the playlist item view
+		video_grid.innerHTML += (new PlayListItemView(playlistItems[count]).toString());
+
+		// get the video length
+		retrieveVideoLength(api_key, playlistItems[count]);
 	}
+	if (nextPage != null) {	
+		document.getElementById("videos-loaded").innerHTML = itemsInList;
+		retrievePlaylistItems(api_key, playlist_id, loadPlaylistItems, nextPage);
+	} else {
+		// hide the Loading div
+		document.getElementById("loading-videos").style.display = "none";
+	}
+	
 }
 
 

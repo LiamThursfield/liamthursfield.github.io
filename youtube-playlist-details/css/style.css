@@ -371,12 +371,16 @@ header h1 {
 
 #loading-videos {
 	display: block;
-	grid-column-start: 1;
-	grid-column-end: 4;
-	grid-row-start: 1;
-	grid-row-end: 2;
 	text-align: center;
-	font-size: 18px;
+	background: #263545;
+	color: #eee;
+	font-size: 28px;
+	margin: 15px 0;
+	padding: 15px;
+}
+
+#loading-videos p {
+	margin: 0;
 }
 
 .error-box {

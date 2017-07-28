@@ -28,7 +28,7 @@ function getPlaylistId() {
 function retrievePlaylist(key, id, callback) {
     $.get(
         "https://www.googleapis.com/youtube/v3/playlists?key=" + key + 
-        "&part=snippet" +
+        "&part=snippet,contentDetails" +
         "&id=" + id, 
         callback
     ); // end of $.get()
@@ -125,7 +125,10 @@ function retrieveVideoLength(key, playlistItem) {
 			var playlistLengthElement = document.getElementById("playlist-length");
 			var playlistLengthElementMilisecs = document.getElementById("playlist-length-ms");
 			
+			console.log("MS: " + playlistLengthElementMilisecs.innerHTML + "len: " + video_length);
+			
 			playlistLengthElementMilisecs.innerHTML = 
+				
 				parseInt(playlistLengthElementMilisecs.innerHTML) + video_length;
 			playlistLengthElement.innerHTML = secToTime(playlistLengthElementMilisecs.innerHTML);
 		}
@@ -244,18 +247,22 @@ function secToTime(duration) {
 	var milliseconds = parseInt((duration)/100)
 		, seconds = parseInt((duration)%60)
 		, minutes = parseInt((duration/60)%60)
-		, hours = parseInt((duration/(60*60)%24));
+		, hours = parseInt((duration/(60*60)%24))
+		, days = parseInt(Math.floor(duration / (3600*24)));
 
 	hours = (hours < 10) ? "0" + hours : hours;
 	minutes = (minutes < 10) ? "0" + minutes : minutes;
 	seconds = (seconds < 10) ? "0" + seconds : seconds;
 	
 	var formattedTime = "";
-	if (parseInt(hours) != 0) {
-		formattedTime += hours + ":";
+	if (parseInt(days) != 0) {
+		formattedTime += days + "d ";
+		formattedTime += hours + "h ";
+	} else if (parseInt(hours) != 0) {
+		formattedTime += hours + "h ";
 	}
 	
-	formattedTime += minutes + ":" + seconds;
+	formattedTime += minutes + "m " + seconds + "s";
 
 	return formattedTime;
 }
