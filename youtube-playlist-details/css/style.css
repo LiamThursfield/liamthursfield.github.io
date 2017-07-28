@@ -234,7 +234,7 @@ header h1 {
     font-weight: 900;
 }
 
-.main .uploaded-date {
+.main .uploaded-small-details, .main .uploaded-date {
 	font-family: "Roboto Condensed", sans-serif;
     font-size: 14px;
 	color: #777;

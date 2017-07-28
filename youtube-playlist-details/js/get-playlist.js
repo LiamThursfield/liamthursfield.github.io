@@ -32,15 +32,19 @@ retrievePlaylist(api_key, playlist_id, showPlaylistInfo);
 * Show the playlist details
 */
 function showPlaylistInfo(data) {
+	// if there is no playlist with the provided id - alert the user via an alert card
 	if (data.pageInfo.totalResults == 0) {
 		document.getElementsByClassName("main")[0].innerHTML = 
 			"<div class='error-box'><h2>Invalid Playlist</h2><p>Please try again.</p>" +
 			"<a href='index.html'><i class='fa fa-arrow-left' aria-hidden='true'></i> Go Back</a></div>";
 	}
 	
+	// get the number of videos in the playlist, and update the details + loading card
 	var numVideos = data.items[0].contentDetails.itemCount;
+	document.getElementById("playlist-total-videos").innerHTML = numVideos;
 	document.getElementById("videos-to-load").innerHTML = numVideos;
 	
+	// get the playlist details from the data, and update the details card
     var playlist = getPlaylistFromData(data);
 	
 	document.getElementById("playlist-title").innerHTML = playlist['title'];
@@ -50,8 +54,6 @@ function showPlaylistInfo(data) {
 	document.getElementById("playlist-description").innerHTML = playlist['description'];
 	document.getElementById("playlist-thumbnail").setAttribute("src",
         playlist['thumbnails']["medium"]["url"]);
-	
-	
 	
 	// ensure the playlist item list is empty, then get all the videos in the playlist
 	playlistItems = [];
@@ -72,28 +74,15 @@ function loadPlaylistItems(data) {
 	
 	// add the playlist items to the list
 	for (var count = 0; count < data.items.length; count++) {
-		playlistItems.push(getPlaylistItemFromData(
-			data.items[count]
-		));
-		console.log(itemsInList + ": " + count);
+		var playlistItem = getPlaylistItemFromData(data.items[count]);
+		playlistItems.push(playlistItem);
+		
+		video_grid.innerHTML += (new PlayListItemView(playlistItem).toString());
+		retrieveVideoLength(api_key, playlistItem);
 	}
 	
-			
-	// show the video cards
-	for (var count = itemsInList; count < playlistItems.length; count++) {
-		// add the playlistItemView to the list
-//		playListItemViews.push(
-//		new PlayListItemView(playlistItems[count])
-//			);
-
-		// show the playlist item view
-		video_grid.innerHTML += (new PlayListItemView(playlistItems[count]).toString());
-
-		// get the video length
-		retrieveVideoLength(api_key, playlistItems[count]);
-	}
 	if (nextPage != null) {	
-		document.getElementById("videos-loaded").innerHTML = itemsInList;
+		document.getElementById("videos-loaded").innerHTML = playlistItems.length;
 		retrievePlaylistItems(api_key, playlist_id, loadPlaylistItems, nextPage);
 	} else {
 		// hide the Loading div
