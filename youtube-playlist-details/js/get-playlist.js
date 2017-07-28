@@ -1,5 +1,5 @@
 // TODO: REMOVE THIS VAR
-var DEBUG = true;
+var DEBUG = false;
 
 var api_key = getApiKey();
 var playlist_id = getPlaylistId();
