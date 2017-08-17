@@ -311,12 +311,11 @@ h2 {
 }
 
 #portfolio a {
-    background-color: #242424;
+    background-color: #dadada;
     display: block;
     padding: 5px 10px;
-    margin: 0px 2px;
-    border-radius: 2px;
-    color: #fff;
+    border-radius: 5px;
+    color: #242424;
     text-align: center;
     text-decoration: none;
 }
