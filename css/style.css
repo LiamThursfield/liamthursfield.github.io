@@ -276,7 +276,7 @@ h2 {
 }
 
 #portfolio img {
-    max-width: 100%;;
+    max-width: 100%;
     border: 2px solid #ddd;
     border-radius: 5px;
 }
@@ -351,6 +351,10 @@ h2 {
     }
 }
 
+#portfolio .mobile-link {
+    display: none;
+}
+
 
 
 
@@ -373,7 +377,7 @@ h2 {
         padding: 20px 0;
         padding-bottom: 25px;
         border-bottom: 3px solid #fd5a5d;
-        text-align: left;
+        text-align: center;
     }
     
     #header-left .extra {
@@ -429,9 +433,26 @@ h2 {
         margin: 0;
         padding: 10px 0;
     }
+    
+    .title h2 {
+        text-align: center;
+    }
 	
 	#main-content div.col {
 		margin-bottom: 25px;
 	}
+    
+    #portfolio .project {
+        display: block;
+    }
+    
+    #portfolio .img-link {
+        display: none;
+    }
+    
+    #portfolio .mobile-link {
+        margin-top: 15px;
+        display: block;
+    }
 
 }
