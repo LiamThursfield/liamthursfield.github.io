@@ -1,0 +1,82 @@
+/************ 
+* All Pages *
+*************/
+body {
+    margin: 0;
+    background: #EEE!important;
+    /*background: #222222!important;*/
+}
+
+.container-1200 {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.absolute-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background: red; !** TODO: REMOVE **!*/
+}
+
+.no-border {
+    border: none!important;
+}
+
+
+@media (min-width: 992px) { /** Large and Up */
+}
+
+@media (max-width: 992px) { /** Up to and including Medium */
+}
+
+@media (max-width: 768px) { /** Up to and including Small */
+
+}
+
+@media (max-width: 576px) { /** XS Only */
+}
+
+
+.main-content {
+    padding: 10px;
+}
+
+.main-content p, .main-content h1, .main-content h2,
+.main-content h3, .main-content h4, .main-content h5, .main-content h6  {
+    margin: 0;
+    padding: 0;
+}
+
+.main-content-box {
+    margin-bottom: 10px;
+    padding: 10px 20px;
+}
+
+.main-content-col-left {
+    padding: 0 5px 0 0;
+}
+
+.main-content-col-right {
+    padding: 0 0 0 5px;
+}
+
+
+@media (min-width: 1200px) { /** Container Max Width **/
+    /*
+        If the screen is wider than the featured articles container:
+        the main content should match the width with no padding on the outer edge
+    */
+    .main-content {
+        padding: 10px 0;
+    }
+}
+
+/** xs, sm **/
+@media (max-width: 768px) {
+    .main-content-col-left, .main-content-col-right {
+        padding: 0;
+    }
+}
