@@ -1,0 +1,25 @@
+header {
+    color: #999999;
+    margin-top: 40px;
+}
+
+.header-enquiries a {
+    color: #999999;
+}
+
+.header-logo img {
+    height: 50px;
+}
+
+.header-menu {
+    text-align: right;
+    font-size: 22px;
+}
+
+.header-menu a {
+    color: #FFFFFF;
+}
+
+.header-menu a:hover {
+    color: #211CFF;
+}

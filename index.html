@@ -3,116 +3,56 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Liam Thursfield - Aspiring Developer</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bree+Serif|Numans|Roboto+Slab">
-    <script src="https://use.fontawesome.com/b8d5b56b66.js"></script>
+
+    <title>Liam Thursfield - Web Developer</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat:700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
   </head>
   <body>
-    <div id="site-container">
-       <!-- WEBSITE HEADER -->
-        <div id="header" class="row">
-            <div id="header-left" class="col-6">
-                <div>
-                    <h1>Liam Thursfield</h1>
-                    <h2>Aspiring Developer</h2>
-                    <p class="extra">
-                        I'm currently in my first development role, as a Junior Web Developer.
-                    </p>
-                    <a class="extra" href="https://www.linkedin.com/in/liamthursfield"><button class="btn">
-                        Check Out My LinkedIn!
-                    </button> </a>
-                </div>
+
+    <header class="container-fluid container-outer">
+
+        <div class="row">
+            <div class="header-logo col-xs-2">
+                <img src="images/LT_Logo.png" alt="LT">
             </div>
-            
-            <div id="header-right" class="col-6">
-                <nav id="header-nav" class="nav-horizontal">
-                    <a href="">Home</a>
-                    <a href="under-construction.html">Resume</a>
-                    <a href="portfolio.html">Portfilio</a>
-                    <a href="under-construction.html">Contact</a>
-                </nav>
-                
-                <div class="headshot">
-                        <img src="images/headshot.png" alt="Headshot of Liam"/>
-                </div>
+        
+            <div class="header-enquiries col-xs-8 hidden-xs">
+              <p><strong>enquiries: </strong><a href="mailto:contact@liamthursfield.me?Subject=Enquiries" target="_top">contact@liamthursfield.me</a></p>                
+            </div>
+        
+            <div class="header-menu col-xs-10 col-sm-2">
+                <a href=""><i class="fas fa-bars"></i></a>
             </div>
         </div>
+    </header>
+
+    <div class="index-jumbotron container-outer container-fluid">
+      <div class="row">
         
-        <div id="main-content">
-            <div id="introduction" class="section">
-                <h1>Introduction</h1>
-                <p>
-                    I completed my BSc (Hons) Open degree - Computer Science, at The Open University. Graduating in December 2017, with a First Class.
-                    <br/><br/>
-                    Whilst working towards my degree I was offered a role as a Full Stack Junior Developer.
-                    I am learning and improving daily, and get to constantly work on different projects.
-                </p>
-            </div>
-            
-            <div class="row section">
-                <div class="col col-6">
-                    <h2>
-                       <i class="fa fa-graduation-cap fa-1x fa-fw" aria-hidden="false"></i> University
-                    </h2>
-                    <p>
-                        The modules of my course included:
-                    </p>                    
-                    <table class="modules">
-                        <tbody>
-                            <tr>
-                                <td class="highlight">Project Module</td><td>First</td>
-                            </tr>
-                            <tr>
-                                <td class="highlight">Data Management</td><td>First</td>
-                            </tr>
-                            <tr>
-                                <td class="highlight">Web, Mobile &amp; Cloud</td><td>First</td>
-                            </tr>
-                            <tr>
-                                <td class="highlight">Software Engineering</td><td>First</td>
-                            </tr>
-                            <tr>
-                                <td class="highlight">Web Technologies</td><td>First</td>
-                            </tr>
-                            <tr>
-                                <td class="highlight">Algorithms &amp; Data Structures</td><td>First</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <div id="index-project" class="col col-6">
-                    <h2>
-                    <i class="fa fa-mobile fa-x" aria-hidden="false"></i> Final Project
-                </h2>
-                <p>
-                    For my final project I researched, designed, and developed an Android application - <span class="highlight">Plack</span>. 
-                    <br><br>
-                    Plack gives users the ability to <span class="highlight">Plan</span> and <span class="highlight">Track</span> aspects of their life, in an organised and intuitive manner.
-                </p>
-                </div>
-            </div>
+        <div class="col-md-10 col-sm-offset-2 p-0">
+          <div class="headline">
+              <h1>Liam Thursfield</h1>
+              <p>Full-Stack Web Developer</p>
+          </div>
         </div>
-        
-        <footer>
-            <div>
-                <p>
-                    <a href="https://www.github.com/liamthursfield"><i class="fa fa-github fa-2x" ></i></a>
-                    <a href="https://www.linkedin.com/in/liamthursfield/"><i class="fa fa-linkedin fa-2x" ></i></a>
-                    <a href="https://www.twitter.com/liamthursfield"><i class="fa fa-twitter fa-2x" ></i></a>
-                   
-                   
-                   <br>
-                   
-                   <b></b>Copyright &copy; 2017 Liam Thursfield
-                </p>
-            </div>
-        </footer>
-        
+
+      </div>
     </div>
     
+    <!-- Script to count visitors -->
     <script src="https://www.w3counter.com/tracker.js?id=118445"></script>
   </body>
 </html>
