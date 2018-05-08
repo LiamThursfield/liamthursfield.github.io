@@ -10,3 +10,12 @@ body {
     max-width: 1500px;
     padding: 0 40px;
 }
+
+.content-section {
+    background: #333;
+    min-height: 300px;
+}
+
+.content-section:nth-child(even) {
+    background: #FFF;
+}
