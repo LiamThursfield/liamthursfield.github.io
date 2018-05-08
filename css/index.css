@@ -1,26 +1,36 @@
 .index-jumbotron {
     margin-top: 50px;
     color: #FFFFFF;
+    text-align: center;
 }
 
 .index-jumbotron h1 {
-    font-size: 52px;
+    font-size: 32px;
     font-weight: 700;
     text-transform: uppercase;    
 }
 
 .index-jumbotron p {
-    font-size: 42px;
+    font-size: 22px;
 }
+
+
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+
     .index-jumbotron {
-        margin-top: 150px;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        text-align: left;
     }
-    .index-jumbotron .headline {
-        border-left: 10px solid #333333;
-        margin-left: -30px;
-        padding-left: 20px
+
+    .index-jumbotron h1 {
+        font-size: 52px;
     }
+    
+    .index-jumbotron p {
+        font-size: 42px;
+    }
+
 }

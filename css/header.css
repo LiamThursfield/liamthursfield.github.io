@@ -1,6 +1,6 @@
 header {
     color: #999999;
-    margin-top: 40px;
+    margin: 20px 0;
 }
 
 .header-enquiries a {
@@ -8,7 +8,7 @@ header {
 }
 
 .header-logo img {
-    height: 50px;
+    height: 30px;
 }
 
 .header-menu {
@@ -21,5 +21,72 @@ header {
 }
 
 .header-menu a:hover {
-    color: #211CFF;
+    color: #999999;
+}
+
+.header-menu a:active, .header-menu a:focus {
+    color: #333333;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    
+    header {
+        margin: 25px 0;
+    }
+
+    .header-logo img {
+        height: 50px;
+    }
+
+}
+
+
+/* Main Navigation */
+.nav-main  {
+    background-color: #FFFFFF;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.nav-main a {
+    color: #333333
+}
+
+.nav-main ul {
+    padding: 10px;
+    margin: 0;
+    list-style: none;
+}
+
+.nav-main li {
+    padding: 10px 0;
+}
+
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .nav-main {
+        text-align: left;
+    }
+
+    .nav-main li {
+        padding: 0 20px;
+        display: inline-block;
+    }
+
+    .nav-main li:nth-child(1) {
+        padding-left: 0!important;
+    }
+    
+    .nav-main li:nth-child(4) {
+        padding-right: 0!important;
+    }
+
+    .nav-main ul {
+        padding: 20px 0;
+    }
 }
