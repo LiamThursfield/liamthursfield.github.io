@@ -45,7 +45,7 @@ header {
 /* Main Navigation */
 .nav-main  {
     background-color: #FFFFFF;
-    font-size: 26px;
+    font-size: 18px;
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
@@ -70,6 +70,7 @@ header {
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .nav-main {
+        font-size: 26px;
         text-align: left;
     }
 
