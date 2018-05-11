@@ -1,37 +1,65 @@
-.index-jumbotron {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    color: #FFFFFF;
+.social-media-container {
+    display: inline-block;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin: 0 auto;
     text-align: center;
 }
 
-.index-jumbotron h1 {
+.social-media-container h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.social-media-container hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.social-media-email {
+    font-size: 24px;
+}
+
+.social-media-email a {
+    text-decoration: none;
+}
+
+.social-media-email i {
+    padding-right: 10px;
+}
+
+.social-media-icons a {
     font-size: 32px;
-    font-weight: 700;
-    text-transform: uppercase;    
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-.index-jumbotron p {
-    font-size: 22px;
+.social-media-row {
+    padding-left: 45px;
+    padding-right: 45px;
 }
 
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
 
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-
-    .index-jumbotron {
-        margin-top: 100px;
-        margin-bottom: 100px;
-        text-align: left;
+    .social-media-container h1 {
+        font-size: 22px;
+        margin-bottom: 10px;
     }
 
-    .index-jumbotron h1 {
-        font-size: 52px;
+    .social-media-icons a {
+        font-size: 24px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
-    
-    .index-jumbotron p {
-        font-size: 42px;
+
+    .social-media-email-text {
+        display: none;
+    }
+
+    .social-media-row {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
 }

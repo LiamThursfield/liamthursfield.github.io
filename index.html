@@ -1,96 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Liam Thursfield - Web Developer</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Liam Thursfield | Full-Stack Developer</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
+    
     <!-- Styles -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sections.css">
     <link rel="stylesheet" href="css/index.css">
 
-    <!-- Fonts  -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat:700" rel="stylesheet">
+    <!-- Font Awesome Style -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
-  </head>
-  <body>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container-outer"> 
+            <div class="header-container">
+                <div class="header-logo-container">
+                    <a href="index.html" class="logo">
+                        <div>LT</div>
+                    </a>
+                </div>
+                
+                <nav class="header-nav-container">
+                    <ul class="header-nav-main">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
 
-    <header class="container-outer container-fluid">
-
-        <div class="header-main row">
-            <div class="header-logo col-6 p-0">
-                <a href="/"><img src="images/LT_Logo.png" alt="LT"></a>
-            </div>
-        
-          
-        
-            <div class="header-menu col-6 p-0">
-                <div class="hamburger-container" onclick="headerMenuClick(this)">
-                    <div class="hamburger-bar hamburger-bar-1"></div>
-                    <div class="hamburger-bar hamburger-bar-2"></div>
-                    <div class="hamburger-bar hamburger-bar-3"></div>
-                  </div>
+                    <div class="header-nav-mobile-button" onclick="openMobileNavigation()">
+                        <i class="fas fa-bars"></i>
+                    </div>                    
+                </nav>
             </div>
         </div>
-
     </header>
 
-    <nav id="nav-main" class="nav-main hidden">
-        <div class="container-outer container-fluid">
-            <div class="row">
-                <div class="col-md-10 offset-md-2 p-0">
-                    <ul>
-                          <li><a href="/">Home</a></li>
-                          <li><a href="/under-construction.html">About</a></li>
-                          <li><a href="/under-construction.html">Portfolio</a></li>
-                          <li><a href="/under-construction.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div> 
-        </div>     
+    <!-- Mobile Navigation - Visible on XS / SM Screens -->
+    <nav id="mobile-navigation-container" class="mobile-navigation-container">
+        <div class="mobile-navigation">
+            <div class="mobile-navigation-close-button"><a href="javascript:void(0)" onclick="closeMobileNavigation()"><i class="fas fa-times"></i></a></div>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </div>
     </nav>
 
-    <div class="index-jumbotron container-outer container-fluid">
-      <div class="row">
-        
-        <div class="col-md-10 offset-md-2 p-0">
-          <div class="headline">
-              <h1>Hi, I'm Liam</h1>
-              <p>A Full-Stack Web Developer</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="content-section">
-      <div class="container-outer container-fluid">
-          <h2 class="m-0" style="color: #333; font-weight: bold; padding-top: 20px">Section 1</h2>
-      </div>
-        
-    </div>
-
-    <div class="content-section">
-        <div class="container-outer container-fluid">
-            <h2 class="m-0" style="color: #FFF; font-weight: bold; padding-top: 20px">Section 2</h2>
+    <!-- Jumbotron -->
+    <div class="jumbotron container-darkest">
+        <div class="container-outer">
+            <h1>Liam Thursfield</h1>
+            <h2 class="text-highlight">Full-Stack Web Developer</h2>
         </div>
     </div>
-    
-    <!-- Script to count visitors -->
-    <script src="https://www.w3counter.com/tracker.js?id=118445"></script>
 
-    <script>
-      function headerMenuClick(hamburgerMenu) {
-        hamburgerMenu.classList.toggle("close");
-        document.getElementById("nav-main").classList.toggle("hidden")
-      }
-    </script>
-  </body>
+    <!-- Section 1: Past/Present/Future -->
+    <div class="container-lightest container-padded-height">
+        <div class="container-outer">
+            <div class="flex-grid">
+                <div class="col col-left">
+                    <div class="card card-lightest">
+                        <h1 class="text-centered">Past</h1>
+                        <hr>
+                        <div class="card-content">
+                            <p>Growing up, I always enjoyed tinkering with computers and tying to figure out how things worked.</p>
+                            <p>This progressed into learning how to create websites, small programs in Java, and even a few Android Applications.</p>
+                            <p>I went on to study Computer Science at University, achieving a First-Class BSc Honours Degree.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card-lightest">
+                        <h1 class="text-centered">Present</h1>
+                        <hr>
+                        <div class="card-content">
+                            <p>I currently work as a Full-Stack Developer (recently promoted from Junior!) at GameSeek.</p>
+                        <p>In this role I am able to work on/learn multiple systems and languages.</p>
+                        <p>These include HTML5, CSS3, and JS (including AngularJS) on the Frontend; along with PHP on the Back end, building the controllers and API endpoints used throughout.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col col-right">
+                    <div class="card card-lightest">
+                        <h1 class="text-centered">Future</h1>
+                        <hr>
+                        <div class="card-content">
+                            <p>Who knows what the future may bring?</p>
+                            <p>Hopefully I will continue to improve - strengthening my core skills, and adding new ones along the way.</p>
+                            <p>A lot of what I have learned has been through YouTube. So, one day (when I am much more confident!), I would love create content that could help other developers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Social Media -->
+    <div class="container-dark container-padded-height">
+        <div class="container-outer text-centered">
+            <div class="social-media-container">
+                <div class="social-media-row">
+                    <h1>Visit me around the web</h1>
+                    <div class="social-media-icons">
+                        <a href="https://www.linkedin.com/in/LiamThursfield" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/LiamThursfield" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/LiamThursfield" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="social-media-row">
+                    <h1>Shoot me an email</h1>
+                    <div class="social-media-email">
+                            <a href="mailto:contact@liamthursfield.me">
+                                <i class="fas fa-envelope"></i>
+                                <span class="social-media-email-text">contact@liamthursfield.me</span>
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+
+    <!-- Footer -->
+    <footer class="footer">
+            <div class="container-outer"> 
+                <div class="footer-container">
+                    <div class="footer-nav">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="portfolio.html">Portfolio</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+
+                    <div class="footer-copy">
+                        Liam Thursfield &copy;
+                    </div>
+
+                    <div class="footer-social-media">
+                        <a href="https://www.linkedin.com/in/LiamThursfield" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/LiamThursfield" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/LiamThursfield" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+    </footer>
+
+
+    <script src="js/header.js"></script>
+     
+</body>
 </html>

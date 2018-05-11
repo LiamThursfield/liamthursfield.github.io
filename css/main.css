@@ -1,0 +1,227 @@
+/* Standard Elements */
+body {
+    background: #222222;
+    font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #FFFFFF;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #DDB382;
+}
+
+h1, h2, h2, h3, h4, h5, h6, p {
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    border-color: #DDB382;
+    border-style: solid;
+    border-width: 2px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+    hr {
+        border-width: 1px;;
+    }
+}
+
+/* Miscellaneous */
+.text-centered {
+    text-align: center;
+}
+
+.text-highlight {
+    color: #DDB382;
+}
+
+/* Containers */
+.container-dark {
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+.container-darkest {
+    background-color: #222222;
+    color: #FFFFFF;
+}
+
+.container-light {
+    background-color: #CCCCCC;
+    color: #222222;
+}
+
+.container-lightest {
+    background-color: #FFFFFF;
+    color: #222222;
+}
+
+.container-medium {
+    background-color: #999999;
+    color: #222222;
+}
+
+.container-outer {
+    margin: auto;
+    max-width: 1360px;
+    padding: 20px;
+}
+
+.container-padded-height {
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+    .container-padded-height {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+}
+
+/* Jumbotron */
+.jumbotron {
+    text-align: center;
+    padding: 125px 0;
+    padding-bottom: 165px;
+}
+
+.jumbotron h1 {
+    font-size: 64px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+.jumbotron h2 {
+    font-size: 28px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+
+    .jumbotron {
+        padding: 20px;
+        padding-bottom: 60px;
+    }
+
+    .jumbotron h1 {
+        font-size: 48px;
+    }
+
+    .jumbotron h2 {
+        font-size: 22px
+    }
+
+}
+
+/* Extra Small devices (phones, less than 576px) */
+@media (max-width: 575.98px) { 
+
+    .jumbotron h1 {
+        font-size: 32px;
+    }
+
+    .jumbotron h2 {
+        font-size: 18px
+    }
+
+}
+
+/* Cards */
+.card h1 {
+    font-size: 32px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.card hr {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.card-centered {
+    text-align: center;
+}
+
+.card-content {
+    font-size: 18px;
+}
+
+.card-content p {
+    margin-bottom: 20px;
+}
+
+.card-lightest {
+    background: #FFFFFF;
+    color: #222222;
+}
+
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+    .card h1 {
+        font-size: 24px;
+    }
+
+    .card hr {
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    .card-content {
+        font-size: 16px;
+    }
+}
+
+/* Grid System */
+.flex-grid {
+    display: flex;
+}
+
+.col {
+    flex: 1;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.col-left {
+    padding-left: 0;
+}
+
+.col-right {
+    padding-right: 0;
+}
+
+
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+    .flex-grid {
+        display: block;
+    }
+
+    .col {
+        padding-top: 20px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .col-left {
+        padding-left: 0;
+        padding-top: 0;
+    }
+}
