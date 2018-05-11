@@ -1,6 +1,10 @@
+  /**********/
+ /* Header */
+/**********/
 header {
     color: #999999;
     margin: 20px 0;
+    position: relative;
 }
 
 .header-enquiries a {
@@ -39,20 +43,51 @@ header {
         height: 50px;
     }
 
+    .hamburger-bar {
+        width: 40px;
+        height: 5px;
+        margin: 8px 0;
+    
+    }
+
+    .hamburger-bar-3 {
+        margin-bottom: 0;
+    }
+    
+    .close .hamburger-bar-1 {
+        -webkit-transform: rotate(-45deg) translate(0, 0);
+        transform: rotate(-45deg) translate(-5px,6px);
+    }
+    
+    .close .hamburger-bar-3 {
+        -webkit-transform: rotate(45deg) translate(0,0);
+        transform:  translate(1px,-17px) rotate(45deg);
+    }
+
 }
 
 
-/* Main Navigation */
+   /*******************/
+  /* Main Navigation */
+ /*******************/
 .nav-main  {
     background-color: #FFFFFF;
     font-size: 18px;
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
+    transition:0.3s ease-out;
+    transform:scaleY(1);
+    transform-origin:top;
+    display: block;
+}
+
+.nav-main.hidden {
+    transform:scaleY(0);
 }
 
 .nav-main a {
-    color: #333333
+    color: #222222
 }
 
 .nav-main ul {
@@ -70,7 +105,7 @@ header {
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .nav-main {
-        font-size: 26px;
+        font-size: 24px;
         text-align: left;
     }
 
@@ -90,4 +125,75 @@ header {
     .nav-main ul {
         padding: 20px 0;
     }
+}
+
+
+  /******************/
+ /* Hamburger Menu */
+/******************/
+.hamburger-container {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.hamburger-bar {
+    width: 30px;
+    height: 3px;
+    background-color: #FFFFFF;
+    margin: 5px 0;
+    transition: 0.15s;
+}
+
+.hamburger-bar-3 {
+    margin-bottom: 0px;
+}
+
+.hamburger-container:hover .hamburger-bar {
+    background-color: #999999;
+}
+
+.hamburger-container:active .hamburger-bar, .hamburger-container:focus .hamburger-bar {
+    background-color: #333333;
+}
+
+.hamburger-container.close {
+    margin-bottom: 9px;
+}
+
+.close .hamburger-bar-1 {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.close .hamburger-bar-2 {opacity: 0;}
+
+.close .hamburger-bar-3 {
+    -webkit-transform: rotate(45deg) translate(0,0);
+    transform:  translate(1px,-8px) rotate(45deg);
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    
+    .hamburger-bar {
+        width: 40px;
+        height: 5px;
+        margin: 8px 0;
+    
+    }
+
+    .hamburger-bar-3 {
+        margin-bottom: 0;
+    }
+    
+    .close .hamburger-bar-1 {
+        -webkit-transform: rotate(-45deg) translate(0, 0);
+        transform: rotate(-45deg) translate(-5px,6px);
+    }
+    
+    .close .hamburger-bar-3 {
+        -webkit-transform: rotate(45deg) translate(0,0);
+        transform:  translate(1px,-17px) rotate(45deg);
+    }
+
 }

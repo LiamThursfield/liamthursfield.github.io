@@ -24,7 +24,7 @@
 
     <header class="container-outer container-fluid">
 
-        <div class="row">
+        <div class="header-main row">
             <div class="header-logo col-6 p-0">
                 <a href="/"><img src="images/LT_Logo.png" alt="LT"></a>
             </div>
@@ -32,13 +32,17 @@
           
         
             <div class="header-menu col-6 p-0">
-                <a href=""><i class="fas fa-bars"></i></a>
+                <div class="hamburger-container" onclick="headerMenuClick(this)">
+                    <div class="hamburger-bar hamburger-bar-1"></div>
+                    <div class="hamburger-bar hamburger-bar-2"></div>
+                    <div class="hamburger-bar hamburger-bar-3"></div>
+                  </div>
             </div>
         </div>
 
     </header>
 
-    <nav class="nav-main">
+    <nav id="nav-main" class="nav-main hidden">
         <div class="container-outer container-fluid">
             <div class="row">
                 <div class="col-md-10 offset-md-2 p-0">
@@ -81,5 +85,12 @@
     
     <!-- Script to count visitors -->
     <script src="https://www.w3counter.com/tracker.js?id=118445"></script>
+
+    <script>
+      function headerMenuClick(hamburgerMenu) {
+        hamburgerMenu.classList.toggle("close");
+        document.getElementById("nav-main").classList.toggle("hidden")
+      }
+    </script>
   </body>
 </html>
