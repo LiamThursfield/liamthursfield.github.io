@@ -1,4 +1,6 @@
+/**********/
 /* Header */
+/**********/
 .header {
     background: #222222;
 }
@@ -11,7 +13,6 @@
 }
 
 /* Header Logo */
-
 .header-logo-container a.logo {
     align-items: center;
     background-color: #FFFFFF;
@@ -40,7 +41,6 @@
 }
 
 /* Header Navigation */
-
 .header-nav-main {
     margin: 0;
     padding: 0;
@@ -85,8 +85,9 @@
 
 }
 
-
+/**********************/
 /* Mobile Navigation  */
+/**********************/
 .mobile-navigation {
     padding: 20px;
 }
@@ -150,9 +151,9 @@
     
 }
 
-
+/**********/
 /* Footer */
-
+/**********/
 .footer {
     background: #222222;
     color: #999999;
@@ -233,4 +234,75 @@
         padding-left: 30px;
     }
     
+}
+
+
+/* About Cards */
+.about-container {
+    margin-bottom: 20px;
+    background: #FFFFFF;
+    color: #333333;
+}
+
+.about-container:last-child {
+    margin-bottom: 0;
+}
+
+.about-container .about-content {
+    padding: 20px;
+    padding-bottom: 40px;
+}
+
+.about-container .about-heading {
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.about-container .about-heading:first-of-type {
+    margin-top: 0;
+}
+
+.about-container .about-list-hr {
+    border-color: #F5E8D9;
+    border-width: 1px;
+    margin-top: 40px;
+}
+
+.about-container .about-list-inner > li {
+    margin-top: 5px;
+}
+
+.about-container .about-list-inner strong {
+    color: #666666;
+    /* font-weight: normal; */
+}
+
+.about-container .about-list-outer {
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+}
+
+.about-container .about-list-outer>li {
+    list-style: none;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.about-container .about-title {
+    background: #333333;
+    color: #FFFFFF;
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+    .about-container .about-heading {
+        font-size: 22px;
+    }
+
+    .about-container .about-title {
+        font-size: 24px;
+    }
 }

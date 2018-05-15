@@ -45,7 +45,39 @@ hr {
     color: #DDB382;
 }
 
+/**************/
 /* Containers */
+/**************/
+
+.container-inner {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.container-inner:last-child {
+    margin-bottom: 0;
+}
+
+.container-outer {
+    margin: auto;
+    max-width: 1360px;
+    padding: 20px;
+}
+
+.container-padded-height {
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+    .container-padded-height {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+}
+
+/* Container Colors */
 .container-dark {
     background-color: #333333;
     color: #FFFFFF;
@@ -69,25 +101,6 @@ hr {
 .container-medium {
     background-color: #999999;
     color: #222222;
-}
-
-.container-outer {
-    margin: auto;
-    max-width: 1360px;
-    padding: 20px;
-}
-
-.container-padded-height {
-    padding-bottom: 50px;
-    padding-top: 50px;
-}
-
-/* Small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) { 
-    .container-padded-height {
-        padding-bottom: 0;
-        padding-top: 0;
-    }
 }
 
 /* Jumbotron */
