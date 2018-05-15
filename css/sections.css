@@ -286,6 +286,10 @@
     margin-top: 40px;
 }
 
+.about-container .about-list-inner {
+    padding-left: 30px;
+}
+
 .about-container .about-list-inner > li {
     margin-top: 5px;
 }
