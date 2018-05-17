@@ -125,7 +125,7 @@ function retrieveVideoLength(key, playlistItem) {
 			var playlistLengthElement = document.getElementById("playlist-length");
 			var playlistLengthElementMilisecs = document.getElementById("playlist-length-ms");
 			
-			console.log("MS: " + playlistLengthElementMilisecs.innerHTML + "len: " + video_length);
+			//console.log("MS: " + playlistLengthElementMilisecs.innerHTML + "len: " + video_length);
 			
 			playlistLengthElementMilisecs.innerHTML = 
 				
